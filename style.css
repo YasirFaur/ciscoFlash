@@ -57,12 +57,17 @@ footer {
     text-align: center;
 }
 
-/* Copyright text styling */
+/* Designer name styling */
 .copyright {
-    text-align: center;
-    margin-top: 15px;
-    margin-bottom: 20px;
+    color: #f6f6f3;
     font-size: 0.9rem;
+    text-align: center;
+}
+
+.copyright .designer-name {
+    color: #ffffff; 
+    font-weight: 600;
+    text-shadow: 0 0 1px rgba(0, 188, 235, 0.6); 
 }
 
 /* Social text button styling */
@@ -130,4 +135,10 @@ header h1 {
     opacity: 0.8;
     margin-top: 6px;
     letter-spacing: 0.8px;
+}
+
+/* Change only the placeholder text color */
+#search-input::placeholder {
+    color: #14254c;
+    opacity: 1;
 }
