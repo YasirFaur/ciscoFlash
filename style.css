@@ -1,0 +1,133 @@
+/* Base styles and body background */
+body {
+    background-color: #14254c;
+    color: #f6f6f3;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Link styles */
+a {
+    color: #f6f6f3;
+    text-decoration: none;
+}
+
+/* Optional: hover state for better interaction */
+a:hover {
+    color: #00bceb;
+}
+
+/* Layout alignment and borders for structural sections */
+header, footer {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5px;
+    border-top: 1px solid #f6f6f3;
+    border-bottom: 1px solid #f6f6f3;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+main {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5px;
+    border-left: 1px solid #f6f6f3;
+    border-right: 1px solid #f6f6f3;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+/* Header title centering */
+header h1 {
+    text-align: center;
+    margin: 0;
+}
+
+/* Top margin for header */
+header {
+    margin-top: 20px;
+}
+
+/* Footer content centering */
+footer {
+    text-align: center;
+}
+
+/* Copyright text styling */
+.copyright {
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+}
+
+/* Social text button styling */
+.btn-link {
+    display: inline-block;
+    border-left: 1px solid #f6f6f3;
+    border-right: 1px solid #f6f6f3;
+    border-radius: 6px;
+    padding: 6px 12px;
+    margin: 1px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Hover effect for buttons */
+.btn-link:hover {
+    background-color: #f6f6f3;
+    color: #14254c;
+}
+
+/* Flashing keyframes animation */
+@keyframes flashing {
+    0% {
+        opacity: 0.8;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Header title animation */
+header h1 {
+    text-align: center;
+    margin: 0;
+    animation: flashing 1.5s linear infinite alternate;
+    opacity: 0.8;
+    transition: all 0.2s linear;
+}
+
+/* Definition of the glowing and flashing animation */
+@keyframes glowing {
+    0% {
+        opacity: 0.8;
+        text-shadow: 0 0 1px #00bceb;
+    }
+    100% {
+        opacity: 1;
+        text-shadow: 0 0 3px #00bceb, 0 0 3px #00bceb;
+    }
+}
+
+/* Header title with text centering and animation */
+header h1 {
+    text-align: center;
+    margin: 0;
+    font-size: 2.5rem; /* Slightly larger for better visual effect */
+    animation: glowing 3s ease-in-out infinite alternate;
+    color: #f6f6f3;
+}
+
+/* Tagline styling */
+.tagline {
+    text-align: center;
+    font-size: 0.95rem;
+    color: #f6f6f3;
+    opacity: 0.8;
+    margin-top: 6px;
+    letter-spacing: 0.8px;
+}
