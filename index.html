@@ -17,21 +17,33 @@
 
     <!-- Main content: search box and terms list -->
     <main>
-        <h2>Index:</h2>
+        <h2>Index <span id="term-count"></span></h2>
 
         <!-- Search input field -->
         <form>
-            <input type="text" id="search-input" placeholder="Search for a term...">
+            <input type="text" id="search-input" placeholder="/ Search for a term ... [Ctrl + K]">
         </form>
 
         <!-- Ordered list for terms -->
         <!-- HTML List with ID -->
         <ol id="terms-list">
-            <li><a href="terms/vlan.html">VLAN</a></li>
-            <li><a href="terms/vxlan.html">VXLAN</a></li>
-            <li><a href="terms/vrf.html">VRF</a></li>
-            <li><a href="terms/ospf.html">OSPF</a></li>
-            <li><a href="terms/ospf.html">a</a></li>
+            <li>
+                <a href="terms/vlan.html">VLAN</a>
+                <span class="term-desc">Virtual Local Area Network</span>
+            </li>
+            <li>
+                <a href="terms/vlan.html">xxxxxx</a>
+                <span class="term-desc">Virtual Local Area Network</span>
+            </li>
+            <li>
+                <a href="terms/vlan.html">yy</a>
+                <span class="term-desc">Virtual Local Area Network</span>
+            </li>
+            <li>
+                <a href="terms/vlan.html">yy</a>
+                <span class="term-desc">Virtual Local Area Network</span>
+            </li>
+            
         </ol>
     </main>
 

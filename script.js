@@ -27,4 +27,32 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
+
+    // Update term count automatically
+    const totalTerms = document.querySelectorAll('ol li').length;
+    const countElement = document.getElementById('term-count');
+    if (countElement) {
+        countElement.textContent = `[ ${totalTerms} terms ]`;
+    }
+});
+
+// Focus search box on pressing '/'
+document.addEventListener('keydown', (event) => {
+    const searchInput = document.getElementById('search-input');
+    // Check if the user is not already typing in an input
+    if (event.key === '/' && document.activeElement !== searchInput) {
+        event.preventDefault(); // Prevent typing '/' into the input
+        searchInput.focus();
+    }
+});
+
+document.addEventListener('keydown', (event) => {
+    const searchInput = document.getElementById('search-input');
+    
+    //Ctrl Cmd + K
+    if ((event.ctrlKey || event.metaKey) && event.code === 'KeyK') {
+        event.preventDefault(); 
+        searchInput.focus();
+        searchInput.select();   
+    }
 });

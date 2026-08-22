@@ -7,6 +7,32 @@ body {
     padding: 0;
 }
 
+/* Enable list counter */
+ol {
+    list-style-position: inside;
+    padding: 0;
+    counter-reset: term-counter; /* Initialize counter */
+}
+
+li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+li::before {
+    counter-increment: term-counter;
+    content: counter(term-counter) ". ";
+    width: 35px; 
+    display: inline-block;
+    color: #ffffff;
+}
+
+li a {
+    width: 90px; 
+    display: inline-block;
+}
+
 /* Link styles */
 a {
     color: #f6f6f3;
@@ -141,4 +167,27 @@ header h1 {
 #search-input::placeholder {
     color: #14254c;
     opacity: 1;
+}
+
+#search-input {
+    width: 100%;          
+    max-width: 320px;   
+    padding: 8px 12px; 
+    box-sizing: border-box; 
+    font-size: 0.9rem;
+}
+
+/* Styling for descriptions outside the anchor tag */
+.term-desc {
+    display: none;
+    color: #a0aec0;
+    font-size: 0.85rem;
+    margin-left: 8px;
+}
+
+/* Show on screens wider than 768px */
+@media (min-width: 768px) {
+    .term-desc {
+        display: inline;
+    }
 }
