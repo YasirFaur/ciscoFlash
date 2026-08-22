@@ -34,6 +34,30 @@ document.addEventListener("DOMContentLoaded", () => {
     if (countElement) {
         countElement.textContent = `[ ${totalTerms} terms ]`;
     }
+
+    const speakBtn = document.getElementById('speak-btn');
+    const overviewText = document.querySelector('.term-overview');
+    if (speakBtn && overviewText && 'speechSynthesis' in window) {
+        let utterance = new SpeechSynthesisUtterance();
+        utterance.lang = 'en-US';
+        utterance.rate = 0.85;
+
+        speakBtn.addEventListener('click', () => {
+            if (window.speechSynthesis.speaking) {
+                window.speechSynthesis.cancel();
+                speakBtn.innerText = '🔊 Listen';
+            } else {
+                utterance.text = overviewText.innerText;
+                
+                utterance.onend = () => { speakBtn.innerText = '[ 🔊 Listen ]'; };
+                utterance.onerror = () => { speakBtn.innerText = '[ 🔊 Listen ]'; };
+
+                window.speechSynthesis.speak(utterance);
+                speakBtn.innerText = '[ ⏹️ Stop ]';
+            }
+        });
+    }
+
 });
 
 // Focus search box on pressing '/'

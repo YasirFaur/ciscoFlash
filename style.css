@@ -191,3 +191,36 @@ header h1 {
         display: inline;
     }
 }
+
+.term-actions {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.nav-action {
+    color: #63b3ed;
+    text-decoration: none;
+    font-family: monospace;
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+}
+
+.nav-action:hover {
+    color: #90cdf4;
+    text-decoration: underline;
+}
+
+.term-overview span {
+    display: block;
+    margin-bottom: 4px; 
+}
+
+.term-overview span:nth-child(odd) {
+    color: #ffffff;
+}
+
+.term-overview span:nth-child(even) {
+    color: #a0aec0;
+}
