@@ -274,6 +274,105 @@ function initSearchShortcuts() {
     });
 }
 
+// Function to handle interactive test mode (Cloze test)
+function initTestMode() {
+    const testBtn = document.getElementById('test-btn');
+    const testBox = document.getElementById('test-box');
+    const testSentence = document.getElementById('test-sentence');
+    const testInput = document.getElementById('test-input');
+    const testSubmitBtn = document.getElementById('test-submit-btn');
+    const testFeedback = document.getElementById('test-feedback');
+    const overviewText = document.querySelector('.term-overview');
+    const overviewSpans = document.querySelectorAll('.term-overview span');
+
+    if (!testBtn || !overviewSpans.length || !overviewText) return;
+
+    // Convert span elements text into array
+    const lines = Array.from(overviewSpans).map(span => span.innerText.trim());
+    let currentIndex = 0;
+    let targetWord = '';
+
+    // Function to speak line with missing word replaced
+    function speakText(text) {
+        if ('speechSynthesis' in window) {
+            window.speechSynthesis.cancel();
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'en-US';
+            utterance.rate = 0.85;
+            window.speechSynthesis.speak(utterance);
+        }
+    }
+
+    // Function to load test step
+    function loadStep(index) {
+        if (index < lines.length) {
+            const currentLine = lines[index];
+            targetWord = getLongestWord(currentLine);
+
+            // Replace target word with blank spaces
+            const maskedLine = currentLine.replace(new RegExp(`\\b${targetWord}\\b`, 'gi'), '__________');
+            
+            // Text to speak without the target word
+            const speakableLine = currentLine.replace(new RegExp(`\\b${targetWord}\\b`, 'gi'), '');
+
+            testSentence.innerText = maskedLine;
+            testInput.value = '';
+            testFeedback.innerText = '';
+            testInput.focus();
+
+            speakText(speakableLine);
+        } else {
+            testSentence.innerText = '🎉 Excellent! You passed the test for all sentences.';
+            document.querySelector('#test-box .practice-controls').style.display = 'none';
+        }
+    }
+
+    // Toggle Test Me mode box and hide overview
+    testBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        
+        // Stop any running speech
+        if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+
+        if (testBox.style.display === 'none') {
+            overviewText.style.display = 'none'; // Hide main overview text
+            testBox.style.display = 'block';
+            currentIndex = 0;
+            document.querySelector('#test-box .practice-controls').style.display = 'flex';
+            loadStep(currentIndex);
+        } else {
+            testBox.style.display = 'none';
+            overviewText.style.display = 'block'; // Show overview text again
+        }
+    });
+
+    // Check user answer
+    function checkAnswer() {
+        const val = testInput.value.trim();
+        if (val.toLowerCase() === targetWord.toLowerCase()) {
+            testFeedback.style.color = '#68d391';
+            testFeedback.innerText = 'Correct!';
+            currentIndex++;
+            setTimeout(() => {
+                loadStep(currentIndex);
+            }, 1000);
+        } else {
+            testFeedback.style.color = '#fc8181';
+            testFeedback.innerText = 'Incorrect. Try again!';
+            
+            // Re-read current sentence without the target word on error
+            const currentLine = lines[currentIndex];
+            const speakableLine = currentLine.replace(new RegExp(`\\b${targetWord}\\b`, 'gi'), '');
+            speakText(speakableLine);
+        }
+    }
+
+    testSubmitBtn.addEventListener('click', checkAnswer);
+    testInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') checkAnswer();
+    });
+}
+
 // Main event handler to initialize all functions
 document.addEventListener("DOMContentLoaded", () => {
     initTermsListSorting();
@@ -282,4 +381,5 @@ document.addEventListener("DOMContentLoaded", () => {
     initSpeechSynthesis();
     initFocusMode();
     initSearchShortcuts();
+    initTestMode(); // Added test mode
 });
