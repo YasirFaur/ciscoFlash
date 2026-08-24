@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ciscoFlash - Index</title>
+    <!-- Link external CSS stylesheet -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+    <!-- Header section with site title -->
+    <header>
+        <h1>ciscoFlash</h1>
+        <p class="tagline">Cisco Terms Simplified in a Flash.</p>
+    </header>
+
+    <main>
+        <article class="term-article">
+            <div class="term-header">
+                <a href="../index.html" class="back-link">[← Index]</a>
+                <a href="#" id="speak-btn" class="back-link">[🔊 Listen]</a>
+                <a href="#" id="practice-btn" class="back-link">[🧠 Focus]</a>
+                <a href="#" id="test-btn" class="back-link">[🧪 Test Me]</a>
+            </div>
+
+            <section class="term-section">    
+                <h1>TTL <span>(Time to Live)</span></h1>            
+                <!-- English comments: HTML structure with span elements for TTL term overview -->
+                <p class="term-overview">
+                    <span>TTL stands for Time to Live in IP network headers.</span>
+                    <span>It is an 8-bit field that prevents packets from looping forever.</span>
+                    <span>Every router that forwards a packet decreases its TTL value by one.</span>
+                    <span>When the TTL reaches zero, the router drops the packet immediately.</span>
+                    <span>The router then sends an ICMP error message back to the sender.</span>
+                    <span>This mechanism protects routers from network congestion and infinite routing loops.</span>
+                    <span>Overall, TTL ensures network bandwidth is not wasted by lost data packets.</span>
+                </p>
+                
+                <!-- Test Me Container -->
+                <div id="test-box" class="practice-container" style="display: none;">
+                    <p id="test-sentence" class="practice-text"></p>
+                    
+                    <div class="practice-controls">
+                        <input type="text" id="test-input" autocomplete="off" placeholder="Type missing word...">
+                        <button id="test-submit-btn" class="practice-submit-btn">Check</button>
+                    </div>
+                    
+                    <p id="test-feedback" class="practice-feedback-text"></p>
+                </div>
+            </section>
+
+            <!-- Practice Container -->
+            <div id="practice-box" class="practice-container" style="display: none;">
+                <div class="mode-switcher" style="margin-bottom: 10px;">
+                    <a href="#" id="switch-mode-btn" class="back-link">[ 📉 Switch to Sliding Mode ]</a>
+                </div>
+                
+                <p id="practice-line" class="practice-text"></p>
+                
+                <div class="practice-controls">
+                    <label id="practice-prompt" for="user-input">Type word:</label>
+                    <input type="text" id="user-input" autocomplete="off" placeholder="Type word here...">
+                    <button id="submit-btn" class="practice-submit-btn">Check</button>
+                </div>
+                
+                <p id="practice-feedback" class="practice-feedback-text"></p>
+            </div>
+
+            <!-- 2. Configuration Example -->
+            <section class="term-section">
+                <h3>Configuration Example (Cisco IOS)</h3>
+                <pre>
+<code>
+Empty
+</code>
+                </pre>
+            </section>
+
+            <section class="term-section">
+                <h3>Network Diagram</h3>
+                <img src="../images/vlan.jfif" alt="VLAN Diagram" class="term-image" width="100%" height="auto">
+            </section>
+        </article>
+    </main>
+
+    <!-- Footer section with social links -->
+    <footer>
+       <!-- Social links as text buttons inside footer -->
+        <div>
+            <a href="https://www.facebook.com/PioneeersTech/" class="btn-link" target="_blank" rel="noopener noreferrer">FaceBook</a>
+            <a href="https://www.linkedin.com/in/yasir-faur-68b66713b/" class="btn-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://www.youtube.com/c/YasirFaur" class="btn-link" target="_blank" rel="noopener noreferrer">YouTube</a>
+            <a href="https://wa.me/905342694115" class="btn-link" target="_blank" rel="noopener noreferrer">WhatsApp</a>        
+        </div>
+    </footer>
+
+    <!-- Copyright notice outside footer -->
+    <p class="copyright">Designed by <span class="designer-name">Yasir Faur</span>, all rights reserved © 2026</p>
+
+    <script src="../script.js"></script>
+
+</body>
+</html>
