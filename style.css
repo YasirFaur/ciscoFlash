@@ -319,3 +319,21 @@ pre::-webkit-scrollbar-thumb:hover {
     margin-top: 8px;
     font-size: 0.9rem;
 }
+
+/* Style for intro text section */
+.site-intro {
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #334155;
+    color: #cbd5e1;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.site-intro p {
+    margin-bottom: 10px;
+}
+
+.site-intro strong {
+    color: #ffffff;
+}
