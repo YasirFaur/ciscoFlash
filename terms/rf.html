@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ciscoFlash - Index</title>
+    <!-- Link external CSS stylesheet -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+    <!-- Header section with site title -->
+    <header>
+        <h1>ciscoFlash</h1>
+        <p class="tagline">Cisco Terms Simplified in a Flash.</p>
+    </header>
+
+    <main>
+        <article class="term-article">
+            <div class="term-header">
+                <a href="../index.html" class="back-link">[← Index]</a>
+                <a href="#" id="speak-btn" class="back-link">[🔊 Listen]</a>
+                <a href="#" id="practice-btn" class="back-link">[🧠 Focus]</a>
+                <a href="#" id="test-btn" class="back-link">[🧪 Test Me]</a>
+            </div>
+
+            <section class="term-section">    
+                <h1>RF spectrum <span>(Radio Frequency spectrum)</span></h1>            
+                <!-- English comments: HTML structure with span elements for RF spectrum term overview -->
+                <p class="term-overview">
+                    <span>RF spectrum stands for Radio Frequency spectrum used in wireless systems.</span>
+                    <span>It includes various frequencies that carry data through the air.</span>
+                    <span>Some frequency bands are public, while others require private licenses.</span>
+                    <span>Different frequencies serve distinct fields like medicine and communications.</span>
+                    <span>Wireless networks like Wi-Fi rely on these signals to function.</span>
+                    <span>Choosing the right frequency helps reduce signal interference in networks.</span>
+                    <span>Overall, the RF spectrum is the foundation of all wireless connections.</span>
+                </p>
+
+                <!-- Test Me Container -->
+                <div id="test-box" class="practice-container" style="display: none;">
+                    <p id="test-sentence" class="practice-text"></p>
+                    
+                    <div class="practice-controls">
+                        <input type="text" id="test-input" autocomplete="off" placeholder="Type missing word...">
+                        <button id="test-submit-btn" class="practice-submit-btn">Check</button>
+                    </div>
+                    
+                    <p id="test-feedback" class="practice-feedback-text"></p>
+                </div>
+            </section>
+
+            <!-- Practice Container -->
+            <div id="practice-box" class="practice-container" style="display: none;">
+                <div class="mode-switcher" style="margin-bottom: 10px;">
+                    <a href="#" id="switch-mode-btn" class="back-link">[ 📉 Switch to Sliding Mode ]</a>
+                </div>
+                
+                <p id="practice-line" class="practice-text"></p>
+                
+                <div class="practice-controls">
+                    <label id="practice-prompt" for="user-input">Type word:</label>
+                    <input type="text" id="user-input" autocomplete="off" placeholder="Type word here...">
+                    <button id="submit-btn" class="practice-submit-btn">Check</button>
+                </div>
+                
+                <p id="practice-feedback" class="practice-feedback-text"></p>
+            </div>
+
+            <!-- 2. Configuration Example -->
+            <section class="term-section">
+                <h3>Configuration Example (Cisco IOS)</h3>
+                <pre>
+<code>
+Empty
+</code>
+                </pre>
+            </section>
+
+            <section class="term-section">
+                <h3>Network Diagram</h3>
+                <img src="../images/vlan.jfif" alt="VLAN Diagram" class="term-image" width="100%" height="auto">
+            </section>
+        </article>
+    </main>
+
+    <!-- Footer section with social links -->
+    <footer>
+       <!-- Social links as text buttons inside footer -->
+        <div>
+            <a href="https://www.facebook.com/PioneeersTech/" class="btn-link" target="_blank" rel="noopener noreferrer">FaceBook</a>
+            <a href="https://www.linkedin.com/in/yasir-faur-68b66713b/" class="btn-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://www.youtube.com/c/YasirFaur" class="btn-link" target="_blank" rel="noopener noreferrer">YouTube</a>
+            <a href="https://wa.me/905342694115" class="btn-link" target="_blank" rel="noopener noreferrer">WhatsApp</a>        
+        </div>
+    </footer>
+
+    <!-- Copyright notice outside footer -->
+    <p class="copyright">Designed by <span class="designer-name">Yasir Faur</span>, all rights reserved © 2026</p>
+
+    <script src="../script.js"></script>
+
+</body>
+</html>
