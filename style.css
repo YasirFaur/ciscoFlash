@@ -224,3 +224,98 @@ header h1 {
 .term-overview span:nth-child(even) {
     color: #a0aec0;
 }
+
+/* Style for code blocks with horizontal scroll */
+pre {
+    background-color: #1a202c;
+    padding: 12px;
+    border-radius: 6px;
+    overflow-x: auto; /* Enable horizontal scrollbar when text overflows */
+    max-width: 100%;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS devices */
+    
+    /* Firefox support: thumb color, track color */
+    scrollbar-width: thin;
+    scrollbar-color: #0f172a transparent;
+}
+
+pre code {
+    white-space: pre; /* Keep code lines on a single line */
+    font-family: monospace;
+}
+
+/* Custom scrollbar height for WebKit browsers (Chrome, Safari, Edge) */
+pre::-webkit-scrollbar {
+    height: 6px; /* Set horizontal scrollbar height */
+}
+
+/* Background track of the scrollbar */
+pre::-webkit-scrollbar-track {
+    background: transparent; /* Transparent background to match page base */
+}
+
+/* Scrollbar handle (thumb) using dark blue */
+pre::-webkit-scrollbar-thumb {
+    background: #0f172a; /* Dark blue color matching website theme */
+    border-radius: 3px;
+}
+
+/* Scrollbar handle on hover */
+pre::-webkit-scrollbar-thumb:hover {
+    background: #1e293b; /* Slightly lighter blue on hover */
+}
+
+/* Container for focus mode */
+.practice-container {
+    background-color: #1a202c;
+    border: 1px solid #4a5568;
+    border-radius: 6px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+/* Current active line display */
+.practice-text {
+    color: #ffffff;
+    font-size: 1.05rem;
+    margin-bottom: 12px;
+}
+
+/* Form input elements */
+.practice-controls {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.practice-controls input {
+    background-color: #0f172a;
+    border: 1px solid #4a5568;
+    color: #ffffff;
+    padding: 6px 10px;
+    border-radius: 4px;
+    outline: none;
+}
+
+.practice-controls input:focus {
+    border-color: #63b3ed;
+}
+
+.practice-submit-btn {
+    background-color: #2b6cb0;
+    color: #ffffff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.practice-submit-btn:hover {
+    background-color: #3182ce;
+}
+
+.practice-feedback-text {
+    margin-top: 8px;
+    font-size: 0.9rem;
+}

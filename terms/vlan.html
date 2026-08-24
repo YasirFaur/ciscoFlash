@@ -20,6 +20,9 @@
             <div class="term-header">
                 <a href="../index.html" class="back-link">[ Back to Index ]</a>
                 <a href="#" id="speak-btn" class="back-link">[🔊 Listen]</a>                   
+                <!-- New Practice Link -->
+                <a href="#" id="practice-btn" class="back-link">[🧠 Focus Mode]</a>
+
                 <h1>VLAN <span>(Virtual Local Area Network)</span></h1>
             </div>
 
@@ -34,6 +37,23 @@
                     <span>Overall, VLANs make managing large networks safer, faster, and more efficient.</span>
                 </p>
             </section>
+
+            <!-- Practice Container -->
+            <div id="practice-box" class="practice-container" style="display: none;">
+                <div class="mode-switcher" style="margin-bottom: 10px;">
+                    <a href="#" id="switch-mode-btn" class="nav-action">[ 📉 Switch to Sliding Mode ]</a>
+                </div>
+                
+                <p id="practice-line" class="practice-text"></p>
+                
+                <div class="practice-controls">
+                    <label id="practice-prompt" for="user-input">Type word:</label>
+                    <input type="text" id="user-input" autocomplete="off" placeholder="Type word here...">
+                    <button id="submit-btn" class="practice-submit-btn">Check</button>
+                </div>
+                
+                <p id="practice-feedback" class="practice-feedback-text"></p>
+            </div>
 
             <!-- 2. Configuration Example -->
             <section class="term-section">
