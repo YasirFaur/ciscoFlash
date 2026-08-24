@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ciscoFlash - Index</title>
+    <!-- Link external CSS stylesheet -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+    <!-- Header section with site title -->
+    <header>
+        <h1>ciscoFlash</h1>
+        <p class="tagline">Cisco Terms Simplified in a Flash.</p>
+    </header>
+
+    <main>
+        <article class="term-article">
+            <div class="term-header">
+                <a href="../index.html" class="back-link">[← Index]</a>
+                <a href="#" id="speak-btn" class="back-link">[🔊 Listen]</a>
+                <a href="#" id="practice-btn" class="back-link">[🧠 Focus]</a>
+                <a href="#" id="test-btn" class="back-link">[🧪 Test Me]</a>
+            </div>
+
+            <section class="term-section">    
+                <h1>Wi-Fi <span>(Wi-Fi)</span></h1>            
+                <!-- English comments: HTML layout for Wi-Fi term overview using individual spans -->
+                <p class="term-overview">
+                    <span>Wi-Fi is a popular technology that connects your devices to the internet without cables.</span>
+                    <span>It uses invisible radio waves to send data through the air between a device and a router.</span>
+                    <span>You can easily use it on phones, laptops, and smart TVs at home or in public places.</span>
+                    <span>Newer standards like Wi-Fi 6 offer faster speeds and less delay for modern users.</span>
+                    <span>Thick walls and home appliances can sometimes weaken the wireless signal.</span>
+                    <span>Overall, Wi-Fi makes everyday internet access simple, fast, and continuous.</span>
+                </p>
+
+                <!-- Test Me Container -->
+                <div id="test-box" class="practice-container" style="display: none;">
+                    <p id="test-sentence" class="practice-text"></p>
+                    
+                    <div class="practice-controls">
+                        <input type="text" id="test-input" autocomplete="off" placeholder="Type missing word...">
+                        <button id="test-submit-btn" class="practice-submit-btn">Check</button>
+                    </div>
+                    
+                    <p id="test-feedback" class="practice-feedback-text"></p>
+                </div>
+            </section>
+
+            <!-- Practice Container -->
+            <div id="practice-box" class="practice-container" style="display: none;">
+                <div class="mode-switcher" style="margin-bottom: 10px;">
+                    <a href="#" id="switch-mode-btn" class="back-link">[ 📉 Switch to Sliding Mode ]</a>
+                </div>
+                
+                <p id="practice-line" class="practice-text"></p>
+                
+                <div class="practice-controls">
+                    <label id="practice-prompt" for="user-input">Type word:</label>
+                    <input type="text" id="user-input" autocomplete="off" placeholder="Type word here...">
+                    <button id="submit-btn" class="practice-submit-btn">Check</button>
+                </div>
+                
+                <p id="practice-feedback" class="practice-feedback-text"></p>
+            </div>
+
+            <!-- 2. Configuration Example -->
+            <section class="term-section">
+                <h3>Configuration Example (Cisco IOS)</h3>
+                <pre>
+<code>
+! Create the wireless SSID
+dot11 ssid Corporate-WiFi
+   vlan 10
+   authentication open
+   authentication key-management wpa2
+   wpa-psk ascii 0 MySecurePass123!
+
+! Configure the radio interface
+interface Dot11Radio0
+   no shutdown
+   encryption vlan 10 mode ciphers aes-ccmp
+   ssid Corporate-WiFi
+
+! Map wireless traffic to VLAN 10
+interface Dot11Radio0.10
+   encapsulation dot1Q 10
+   bridge-group 1
+</code>
+                </pre>
+            </section>
+
+            <section class="term-section">
+                <h3>Network Diagram</h3>
+                <img src="../images/vlan.jfif" alt="VLAN Diagram" class="term-image" width="100%" height="auto">
+            </section>
+        </article>
+    </main>
+
+    <!-- Footer section with social links -->
+    <footer>
+       <!-- Social links as text buttons inside footer -->
+        <div>
+            <a href="https://www.facebook.com/PioneeersTech/" class="btn-link" target="_blank" rel="noopener noreferrer">FaceBook</a>
+            <a href="https://www.linkedin.com/in/yasir-faur-68b66713b/" class="btn-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://www.youtube.com/c/YasirFaur" class="btn-link" target="_blank" rel="noopener noreferrer">YouTube</a>
+            <a href="https://wa.me/905342694115" class="btn-link" target="_blank" rel="noopener noreferrer">WhatsApp</a>        
+        </div>
+    </footer>
+
+    <!-- Copyright notice outside footer -->
+    <p class="copyright">Designed by <span class="designer-name">Yasir Faur</span>, all rights reserved © 2026</p>
+
+    <script src="../script.js"></script>
+
+</body>
+</html>
