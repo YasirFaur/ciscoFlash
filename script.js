@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (speakBtn && overviewText && 'speechSynthesis' in window) {
         let utterance = new SpeechSynthesisUtterance();
         utterance.lang = 'en-US';
-        utterance.rate = 0.85;
+        utterance.rate = 0.8;
 
         speakBtn.addEventListener('click', () => {
             if (window.speechSynthesis.speaking) {
