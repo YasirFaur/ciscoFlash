@@ -1,1 +1,427 @@
-const _0x386246=_0x13a8;(function(_0x4201d8,_0x1734de){const _0x48a4cd=_0x13a8,_0x3e61b5=_0x4201d8();while(!![]){try{const _0x2c9221=-parseInt(_0x48a4cd(0x1ae))/0x1*(-parseInt(_0x48a4cd(0x1b0))/0x2)+parseInt(_0x48a4cd(0x1c9))/0x3*(-parseInt(_0x48a4cd(0x189))/0x4)+-parseInt(_0x48a4cd(0x1c5))/0x5*(parseInt(_0x48a4cd(0x19d))/0x6)+-parseInt(_0x48a4cd(0x1ac))/0x7*(-parseInt(_0x48a4cd(0x19e))/0x8)+parseInt(_0x48a4cd(0x19b))/0x9+-parseInt(_0x48a4cd(0x1d5))/0xa*(parseInt(_0x48a4cd(0x1c3))/0xb)+parseInt(_0x48a4cd(0x1b4))/0xc;if(_0x2c9221===_0x1734de)break;else _0x3e61b5['push'](_0x3e61b5['shift']());}catch(_0x1022c9){_0x3e61b5['push'](_0x3e61b5['shift']());}}}(_0x2b73,0xaab8c));function getLongestWord(_0x2c54bc){const _0x4dbdc5=_0x13a8,_0x5430d0=_0x2c54bc[_0x4dbdc5(0x195)](/[^a-zA-Z0-9\s]/g,''),_0x474320=_0x5430d0['split'](/\s+/);let _0x51e9d5='';return _0x474320['forEach'](_0x218250=>{const _0x1d5165=_0x4dbdc5;_0x218250[_0x1d5165(0x1de)]>_0x51e9d5['length']&&(_0x51e9d5=_0x218250);}),_0x51e9d5;}function initTermsListSorting(){const _0x51cbf3=_0x13a8,_0x2f3b45=document[_0x51cbf3(0x187)](_0x51cbf3(0x1cd));if(!_0x2f3b45)return;const _0xa48fdc=Array['from'](_0x2f3b45['getElementsByTagName']('li'));_0xa48fdc[_0x51cbf3(0x185)]((_0x48c690,_0x5142c8)=>_0x48c690[_0x51cbf3(0x1cf)][_0x51cbf3(0x1b7)]()[_0x51cbf3(0x1b5)](_0x5142c8[_0x51cbf3(0x1cf)][_0x51cbf3(0x1b7)]())),_0x2f3b45[_0x51cbf3(0x183)]='',_0xa48fdc[_0x51cbf3(0x1b6)](_0x13e42a=>_0x2f3b45[_0x51cbf3(0x192)](_0x13e42a));}function _0x2b73(){const _0x17eb48=['none','190WZccXL','keydown','onerror','.practice-controls','ctrlKey','style','[\x20🔊\x20Listen\x20]','practice-btn','from','length','cancel','lang','select','focus','innerHTML','practice-line','sort','[\x20📈\x20Switch\x20to\x20Cumulative\x20Mode\x20]','getElementById','slice','362704aaynwB','#terms-list\x20li','speak','color','DOMContentLoaded','onend','.term-overview\x20span','practice-prompt','test-box','appendChild','test-submit-btn','querySelectorAll','replace','[\x20⏹️\x20Stop\x20]','test-btn','practice-box','activeElement','metaKey','2982582zUlbkz','value','13506YSQuKb','40768ApsqJc','#68d391','Enter','#test-box\x20.practice-controls','rate','click','keypress','🎉\x20Excellent!\x20You\x20passed\x20the\x20test\x20for\x20all\x20sentences.','join','preventDefault','disabled','ol\x20li','block','includes','1505TZnaSd','🎉\x20Excellent!\x20You\x20have\x20completed\x20all\x20sentences.','6ZEsAUZ','.term-overview','67390YyAjNP','practice-feedback','querySelector','speaking','14354784bHbBuy','localeCompare','forEach','trim','addEventListener','search-input','Correct!','flex','speechSynthesis','map','Incorrect.\x20Try\x20again!','key','speak-btn','#fc8181','toLowerCase','683419lPIStS','display','1295brMfnE','[\x20📉\x20Switch\x20to\x20Sliding\x20Mode\x20]','en-US','test-sentence','12RHNpTi','user-input','#e2e8f0','__________','terms-list','submit-btn','textContent','innerText','🎧\x20Listening...\x20Please\x20wait','KeyK','text'];_0x2b73=function(){return _0x17eb48;};return _0x2b73();}function initSearchLogic(){const _0x383d65=_0x13a8,_0x57dc83=document['getElementById'](_0x383d65(0x1b9));if(!_0x57dc83)return;_0x57dc83[_0x383d65(0x1b8)](_0x383d65(0x1d6),_0x19fb8d=>{const _0x34a691=_0x383d65;if(_0x19fb8d[_0x34a691(0x1bf)]===_0x34a691(0x1a0)){_0x19fb8d[_0x34a691(0x1a7)]();const _0x839a69=_0x57dc83['value'][_0x34a691(0x1c2)]()[_0x34a691(0x1b7)](),_0x22aaff=document['querySelectorAll'](_0x34a691(0x18a));_0x22aaff[_0x34a691(0x1b6)](_0x135a7f=>{const _0x260252=_0x34a691,_0xb0a68d=_0x135a7f['textContent']['toLowerCase']();_0x135a7f[_0x260252(0x1da)]['display']=_0xb0a68d[_0x260252(0x1ab)](_0x839a69)?'':_0x260252(0x1d4);});}});}function initTermCounter(){const _0x3fe2ef=_0x13a8,_0x5019f8=document[_0x3fe2ef(0x194)](_0x3fe2ef(0x1a9))[_0x3fe2ef(0x1de)],_0x3a9210=document[_0x3fe2ef(0x187)]('term-count');_0x3a9210&&(_0x3a9210['textContent']='[\x20'+_0x5019f8+'\x20terms\x20]');}function initSpeechSynthesis(){const _0xf49c86=_0x13a8,_0x599101=document['getElementById'](_0xf49c86(0x1c0)),_0x3011f5=document[_0xf49c86(0x1b2)](_0xf49c86(0x1af));if(_0x599101&&_0x3011f5&&_0xf49c86(0x1bc)in window){let _0x153099=new SpeechSynthesisUtterance();_0x153099[_0xf49c86(0x1e0)]='en-US',_0x153099[_0xf49c86(0x1a2)]=0.8,_0x599101['addEventListener'](_0xf49c86(0x1a3),()=>{const _0x190420=_0xf49c86;window[_0x190420(0x1bc)][_0x190420(0x1b3)]?(window[_0x190420(0x1bc)][_0x190420(0x1df)](),_0x599101[_0x190420(0x1d0)]=_0x190420(0x1db)):(_0x153099[_0x190420(0x1d3)]=_0x3011f5['innerText'],_0x153099[_0x190420(0x18e)]=()=>{const _0x10676a=_0x190420;_0x599101[_0x10676a(0x1d0)]='[\x20🔊\x20Listen\x20]';},_0x153099['onerror']=()=>{const _0x254720=_0x190420;_0x599101[_0x254720(0x1d0)]='[\x20🔊\x20Listen\x20]';},window[_0x190420(0x1bc)][_0x190420(0x18b)](_0x153099),_0x599101[_0x190420(0x1d0)]=_0x190420(0x196));});}}function initFocusMode(){const _0x4f9a54=_0x13a8,_0x4cd1d5=document[_0x4f9a54(0x187)](_0x4f9a54(0x1dc)),_0x2fd4f0=document[_0x4f9a54(0x187)](_0x4f9a54(0x198)),_0x52471f=document['getElementById'](_0x4f9a54(0x184)),_0x327e4e=document[_0x4f9a54(0x187)](_0x4f9a54(0x190)),_0x55c00a=document[_0x4f9a54(0x187)](_0x4f9a54(0x1ca)),_0xa77de5=document[_0x4f9a54(0x187)](_0x4f9a54(0x1ce)),_0x47660=document[_0x4f9a54(0x187)](_0x4f9a54(0x1b1)),_0x299833=document[_0x4f9a54(0x187)]('switch-mode-btn'),_0x254829=document['querySelectorAll']('.term-overview\x20span');if(!_0x4cd1d5||!_0x254829[_0x4f9a54(0x1de)])return;const _0x369b08=Array[_0x4f9a54(0x1dd)](_0x254829)['map'](_0x411b53=>_0x411b53[_0x4f9a54(0x1d0)][_0x4f9a54(0x1b7)]());let _0x2a696b=0x0,_0x237c84='',_0x340970=0x0;function _0x1b857a(_0x25b2fb){const _0x440bde=_0x4f9a54;if(_0x25b2fb===0x0)return _0x440bde(0x186);if(_0x25b2fb===0x1)return _0x440bde(0x1c6);return'[\x20🎯\x20Switch\x20to\x20Single\x20Line\x20Mode\x20]';}function _0x1fa6c3(){const _0x1694c4=_0x4f9a54;if(_0x55c00a)_0x55c00a[_0x1694c4(0x1a8)]=!![];if(_0xa77de5)_0xa77de5['disabled']=!![];_0x47660&&(_0x47660[_0x1694c4(0x1da)][_0x1694c4(0x18c)]=_0x1694c4(0x1cb),_0x47660[_0x1694c4(0x1d0)]=_0x1694c4(0x1d1));}function _0x59a4fd(){const _0x4650ef=_0x4f9a54;_0x55c00a&&(_0x55c00a[_0x4650ef(0x1a8)]=![],_0x55c00a[_0x4650ef(0x182)]());if(_0xa77de5)_0xa77de5['disabled']=![];if(_0x47660)_0x47660[_0x4650ef(0x1d0)]='';}function _0x2e4589(_0x2eba87){const _0x2646fc=_0x4f9a54;if('speechSynthesis'in window){window[_0x2646fc(0x1bc)][_0x2646fc(0x1df)](),_0x1fa6c3();const _0x25302c=new SpeechSynthesisUtterance(_0x2eba87);_0x25302c[_0x2646fc(0x1e0)]=_0x2646fc(0x1c7),_0x25302c['rate']=0.9,_0x25302c[_0x2646fc(0x18e)]=()=>{_0x59a4fd();},_0x25302c[_0x2646fc(0x1d7)]=()=>{_0x59a4fd();},window['speechSynthesis'][_0x2646fc(0x18b)](_0x25302c);}else _0x59a4fd();}function _0x39e855(_0x3b52cc){const _0x44c07a=_0x4f9a54;if(_0x3b52cc<_0x369b08[_0x44c07a(0x1de)]){let _0x1d228d='';if(_0x340970===0x0)_0x1d228d=_0x369b08[_0x3b52cc];else{if(_0x340970===0x1)_0x1d228d=_0x369b08[_0x44c07a(0x188)](0x0,_0x3b52cc+0x1)['join']('\x0a');else _0x340970===0x2&&(_0x1d228d=_0x369b08['slice'](_0x3b52cc)['join']('\x0a'));}_0x237c84=getLongestWord(_0x369b08[_0x3b52cc]),_0x52471f[_0x44c07a(0x1d0)]=_0x1d228d,_0x327e4e&&(_0x327e4e[_0x44c07a(0x1d0)]='Type\x20\x22'+_0x237c84+'\x22:'),_0x55c00a[_0x44c07a(0x19c)]='',_0x2e4589(_0x1d228d);}else _0x52471f[_0x44c07a(0x1d0)]=_0x44c07a(0x1ad),document[_0x44c07a(0x1b2)](_0x44c07a(0x1d8))[_0x44c07a(0x1da)]['display']=_0x44c07a(0x1d4);}_0x4cd1d5[_0x4f9a54(0x1b8)](_0x4f9a54(0x1a3),_0x161589=>{const _0x2c55be=_0x4f9a54;_0x161589[_0x2c55be(0x1a7)]();if(_0x2fd4f0[_0x2c55be(0x1da)][_0x2c55be(0x1c4)]==='none'){_0x2fd4f0[_0x2c55be(0x1da)]['display']=_0x2c55be(0x1aa),_0x2a696b=0x0,_0x340970=0x0;if(_0x299833)_0x299833[_0x2c55be(0x1d0)]=_0x1b857a(_0x340970);document[_0x2c55be(0x1b2)](_0x2c55be(0x1d8))[_0x2c55be(0x1da)][_0x2c55be(0x1c4)]=_0x2c55be(0x1bb),_0x39e855(_0x2a696b);}else{_0x2fd4f0[_0x2c55be(0x1da)][_0x2c55be(0x1c4)]=_0x2c55be(0x1d4);if(_0x2c55be(0x1bc)in window)window[_0x2c55be(0x1bc)]['cancel']();}});_0x299833&&_0x299833[_0x4f9a54(0x1b8)]('click',_0x275467=>{const _0x371da3=_0x4f9a54;_0x275467[_0x371da3(0x1a7)](),_0x340970=(_0x340970+0x1)%0x3,_0x299833[_0x371da3(0x1d0)]=_0x1b857a(_0x340970),_0x2a696b=0x0,document[_0x371da3(0x1b2)](_0x371da3(0x1d8))['style'][_0x371da3(0x1c4)]=_0x371da3(0x1bb),_0x39e855(_0x2a696b);});function _0x23339c(){const _0x11e7cd=_0x4f9a54;if(_0x55c00a[_0x11e7cd(0x1a8)])return;const _0x301f8d=_0x55c00a[_0x11e7cd(0x19c)][_0x11e7cd(0x1b7)]();if(_0x301f8d[_0x11e7cd(0x1c2)]()===_0x237c84['toLowerCase']())_0x47660['style'][_0x11e7cd(0x18c)]=_0x11e7cd(0x19f),_0x47660[_0x11e7cd(0x1d0)]=_0x11e7cd(0x1ba),_0x2a696b++,setTimeout(()=>{_0x39e855(_0x2a696b);},0x3e8);else{_0x47660[_0x11e7cd(0x1da)][_0x11e7cd(0x18c)]=_0x11e7cd(0x1c1),_0x47660[_0x11e7cd(0x1d0)]=_0x11e7cd(0x1be);let _0x29da1f=_0x369b08[_0x2a696b];if(_0x340970===0x1)_0x29da1f=_0x369b08[_0x11e7cd(0x188)](0x0,_0x2a696b+0x1)[_0x11e7cd(0x1a6)]('\x0a');if(_0x340970===0x2)_0x29da1f=_0x369b08[_0x11e7cd(0x188)](_0x2a696b)['join']('\x0a');_0x2e4589(_0x29da1f);}}_0xa77de5[_0x4f9a54(0x1b8)](_0x4f9a54(0x1a3),_0x23339c),_0x55c00a['addEventListener'](_0x4f9a54(0x1a4),_0x18cafc=>{const _0x27c888=_0x4f9a54;if(_0x18cafc[_0x27c888(0x1bf)]===_0x27c888(0x1a0))_0x23339c();});}function _0x13a8(_0x211cb2,_0x38ddbc){_0x211cb2=_0x211cb2-0x181;const _0x2b73cd=_0x2b73();let _0x13a869=_0x2b73cd[_0x211cb2];return _0x13a869;}function initSearchShortcuts(){const _0xa1f9a1=_0x13a8;document['addEventListener'](_0xa1f9a1(0x1d6),_0x28e0cc=>{const _0x1de18a=_0xa1f9a1,_0x14e23b=document[_0x1de18a(0x187)](_0x1de18a(0x1b9));if(!_0x14e23b)return;_0x28e0cc[_0x1de18a(0x1bf)]==='/'&&document[_0x1de18a(0x199)]!==_0x14e23b&&(_0x28e0cc[_0x1de18a(0x1a7)](),_0x14e23b[_0x1de18a(0x182)]()),(_0x28e0cc[_0x1de18a(0x1d9)]||_0x28e0cc[_0x1de18a(0x19a)])&&_0x28e0cc['code']===_0x1de18a(0x1d2)&&(_0x28e0cc['preventDefault'](),_0x14e23b[_0x1de18a(0x182)](),_0x14e23b[_0x1de18a(0x181)]());});}function initTestMode(){const _0x1e5820=_0x13a8,_0x4580b7=document[_0x1e5820(0x187)](_0x1e5820(0x197)),_0x2cc7a0=document[_0x1e5820(0x187)](_0x1e5820(0x191)),_0x5477ed=document[_0x1e5820(0x187)](_0x1e5820(0x1c8)),_0x135778=document[_0x1e5820(0x187)]('test-input'),_0x5ceae5=document[_0x1e5820(0x187)](_0x1e5820(0x193)),_0x11dcbb=document['getElementById']('test-feedback'),_0x1431a8=document[_0x1e5820(0x1b2)](_0x1e5820(0x1af)),_0x29b118=document[_0x1e5820(0x194)](_0x1e5820(0x18f));if(!_0x4580b7||!_0x29b118['length']||!_0x1431a8)return;const _0x27cc55=Array[_0x1e5820(0x1dd)](_0x29b118)[_0x1e5820(0x1bd)](_0x438d43=>_0x438d43[_0x1e5820(0x1d0)][_0x1e5820(0x1b7)]());let _0x44e96d=0x0,_0x109a73='';function _0x2d154c(_0x104a23){const _0x1dac1a=_0x1e5820;if('speechSynthesis'in window){window[_0x1dac1a(0x1bc)]['cancel']();const _0x52bf1a=new SpeechSynthesisUtterance(_0x104a23);_0x52bf1a[_0x1dac1a(0x1e0)]=_0x1dac1a(0x1c7),_0x52bf1a[_0x1dac1a(0x1a2)]=0.85,window[_0x1dac1a(0x1bc)][_0x1dac1a(0x18b)](_0x52bf1a);}}function _0x505ffe(_0x498fe2){const _0x1548de=_0x1e5820;if(_0x498fe2<_0x27cc55[_0x1548de(0x1de)]){const _0x57b917=_0x27cc55[_0x498fe2];_0x109a73=getLongestWord(_0x57b917);const _0x25c534=_0x57b917[_0x1548de(0x195)](new RegExp('\x5cb'+_0x109a73+'\x5cb','gi'),_0x1548de(0x1cc)),_0x279b3d=_0x57b917[_0x1548de(0x195)](new RegExp('\x5cb'+_0x109a73+'\x5cb','gi'),'');_0x5477ed['innerText']=_0x25c534,_0x135778[_0x1548de(0x19c)]='',_0x11dcbb[_0x1548de(0x1d0)]='',_0x135778[_0x1548de(0x182)](),_0x2d154c(_0x279b3d);}else _0x5477ed[_0x1548de(0x1d0)]=_0x1548de(0x1a5),document[_0x1548de(0x1b2)](_0x1548de(0x1a1))[_0x1548de(0x1da)][_0x1548de(0x1c4)]='none';}_0x4580b7['addEventListener']('click',_0x13a745=>{const _0x21dee0=_0x1e5820;_0x13a745[_0x21dee0(0x1a7)]();if(_0x21dee0(0x1bc)in window)window[_0x21dee0(0x1bc)]['cancel']();_0x2cc7a0[_0x21dee0(0x1da)][_0x21dee0(0x1c4)]===_0x21dee0(0x1d4)?(_0x1431a8['style'][_0x21dee0(0x1c4)]=_0x21dee0(0x1d4),_0x2cc7a0[_0x21dee0(0x1da)]['display']=_0x21dee0(0x1aa),_0x44e96d=0x0,document[_0x21dee0(0x1b2)](_0x21dee0(0x1a1))['style'][_0x21dee0(0x1c4)]=_0x21dee0(0x1bb),_0x505ffe(_0x44e96d)):(_0x2cc7a0[_0x21dee0(0x1da)][_0x21dee0(0x1c4)]=_0x21dee0(0x1d4),_0x1431a8[_0x21dee0(0x1da)][_0x21dee0(0x1c4)]='block');});function _0x269fd7(){const _0x11bae2=_0x1e5820,_0x4592c7=_0x135778[_0x11bae2(0x19c)][_0x11bae2(0x1b7)]();if(_0x4592c7['toLowerCase']()===_0x109a73[_0x11bae2(0x1c2)]())_0x11dcbb['style'][_0x11bae2(0x18c)]=_0x11bae2(0x19f),_0x11dcbb[_0x11bae2(0x1d0)]=_0x11bae2(0x1ba),_0x44e96d++,setTimeout(()=>{_0x505ffe(_0x44e96d);},0x3e8);else{_0x11dcbb[_0x11bae2(0x1da)][_0x11bae2(0x18c)]=_0x11bae2(0x1c1),_0x11dcbb[_0x11bae2(0x1d0)]=_0x11bae2(0x1be);const _0x33fd94=_0x27cc55[_0x44e96d],_0x3cd1e4=_0x33fd94['replace'](new RegExp('\x5cb'+_0x109a73+'\x5cb','gi'),'');_0x2d154c(_0x3cd1e4);}}_0x5ceae5[_0x1e5820(0x1b8)](_0x1e5820(0x1a3),_0x269fd7),_0x135778[_0x1e5820(0x1b8)](_0x1e5820(0x1a4),_0x43b943=>{const _0x49406b=_0x1e5820;if(_0x43b943[_0x49406b(0x1bf)]===_0x49406b(0x1a0))_0x269fd7();});}document[_0x386246(0x1b8)](_0x386246(0x18d),()=>{initTermsListSorting(),initSearchLogic(),initTermCounter(),initSpeechSynthesis(),initFocusMode(),initSearchShortcuts(),initTestMode();});
+let rate_of_speach = 0.7;
+// Helper function to find the longest word in a text line
+function getLongestWord(text) {
+    // Clean text from punctuation marks
+    const cleanText = text.replace(/[^a-zA-Z0-9\s]/g, '');
+    const words = cleanText.split(/\s+/);
+    let longest = '';
+
+    words.forEach(word => {
+        if (word.length > longest.length) {
+            longest = word;
+        }
+    });
+
+    return longest;
+}
+
+// Function to sort the terms list alphabetically
+function initTermsListSorting() {
+    const termsList = document.getElementById("terms-list");
+    if (!termsList) return;
+
+    const items = Array.from(termsList.getElementsByTagName("li"));
+    items.sort((a, b) => a.textContent.trim().localeCompare(b.textContent.trim()));
+
+    termsList.innerHTML = "";
+    items.forEach(item => termsList.appendChild(item));
+}
+
+// Function to handle index page search input
+function initSearchLogic() {
+    const searchInput = document.getElementById("search-input");
+    if (!searchInput) return;
+
+    searchInput.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") {
+            event.preventDefault(); // Prevent default page reload on Enter
+            const query = searchInput.value.toLowerCase().trim();
+            const items = document.querySelectorAll("#terms-list li");
+
+            items.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                item.style.display = text.includes(query) ? "" : "none";
+            });
+        }
+    });
+}
+
+// Function to update the total count of terms
+function initTermCounter() {
+    const totalTerms = document.querySelectorAll('ol li').length;
+    const countElement = document.getElementById('term-count');
+    
+    if (countElement) {
+        countElement.textContent = `[ ${totalTerms} terms ]`;
+    }
+}
+
+// Function to handle global text-to-speech button
+function initSpeechSynthesis() {
+    const speakBtn = document.getElementById('speak-btn');
+    const overviewText = document.querySelector('.term-overview');
+
+    if (speakBtn && overviewText && 'speechSynthesis' in window) {
+        let utterance = new SpeechSynthesisUtterance();
+        utterance.lang = 'en-US';
+        
+
+        speakBtn.addEventListener('click', () => {
+            if (window.speechSynthesis.speaking) {
+                window.speechSynthesis.cancel();
+                speakBtn.innerText = '[ 🔊 Listen ]';
+            } else {
+                utterance.text = overviewText.innerText;
+                
+                utterance.onend = () => { speakBtn.innerText = '[ 🔊 Listen ]'; };
+                utterance.onerror = () => { speakBtn.innerText = '[ 🔊 Listen ]'; };
+                
+                utterance.rate = rate_of_speach;
+                window.speechSynthesis.speak(utterance);
+                speakBtn.innerText = '[ ⏹️ Stop ]';
+            }
+        });
+    }
+}
+
+// Function to handle interactive focus, cumulative, and sliding modes
+function initFocusMode() {
+    const practiceBtn = document.getElementById('practice-btn');
+    const practiceBox = document.getElementById('practice-box');
+    const practiceLine = document.getElementById('practice-line');
+    const practicePrompt = document.getElementById('practice-prompt');
+    const userInput = document.getElementById('user-input');
+    const submitBtn = document.getElementById('submit-btn');
+    const feedback = document.getElementById('practice-feedback');
+    const switchModeBtn = document.getElementById('switch-mode-btn');
+    const overviewSpans = document.querySelectorAll('.term-overview span');
+
+    if (!practiceBtn || !overviewSpans.length) return;
+
+    // Convert span texts into lines array
+    const lines = Array.from(overviewSpans).map(span => span.innerText.trim());
+    let currentIndex = 0;
+    let targetWord = '';
+    
+    // Modes: 0 = Single Line, 1 = Cumulative, 2 = Sliding Window
+    let currentMode = 0;
+
+    // Helper text for mode button display
+    function getModeLabel(mode) {
+        if (mode === 0) return '[ 📈 Switch to Cumulative Mode ]';
+        if (mode === 1) return '[ 📉 Switch to Sliding Mode ]';
+        return '[ 🎯 Switch to Single Line Mode ]';
+    }
+
+    // Helper to lock inputs while speech is playing
+    function disableInputs() {
+        if (userInput) userInput.disabled = true;
+        if (submitBtn) submitBtn.disabled = true;
+        if (feedback) {
+            feedback.style.color = '#e2e8f0';
+            feedback.innerText = '🎧 Listening... Please wait';
+        }
+    }
+
+    // Helper to unlock inputs after speech finishes
+    function enableInputs() {
+        if (userInput) {
+            userInput.disabled = false;
+            userInput.focus();
+        }
+        if (submitBtn) submitBtn.disabled = false;
+        if (feedback) feedback.innerText = '';
+    }
+
+    // Function to speak current displayed text and control input locks
+    function speakText(text) {
+        if ('speechSynthesis' in window) {
+            window.speechSynthesis.cancel();
+            
+            // Lock inputs before starting audio
+            disableInputs();
+
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'en-US';
+            utterance.rate = rate_of_speach;
+
+            // Enable inputs when speech ends
+            utterance.onend = () => {
+                enableInputs();
+            };
+
+            // Enable inputs on speech error to avoid blocking user
+            utterance.onerror = () => {
+                enableInputs();
+            };
+
+            window.speechSynthesis.speak(utterance);
+        } else {
+            // Fallback if SpeechSynthesis is not supported
+            enableInputs();
+        }
+    }
+
+    // Function to load current view step
+    function loadStep(index) {
+        if (index < lines.length) {
+            let displayText = '';
+
+            if (currentMode === 0) {
+                // Mode 0: Single current line
+                displayText = lines[index];
+            } else if (currentMode === 1) {
+                // Mode 1: Cumulative from start to index
+                displayText = lines.slice(0, index + 1).join('\n');
+            } else if (currentMode === 2) {
+                // Mode 2: Sliding Window from current index to end
+                displayText = lines.slice(index).join('\n');
+            }
+
+            // Target word is always the longest in the focus line (lines[index])
+            targetWord = getLongestWord(lines[index]);
+            
+            practiceLine.innerText = displayText;
+            
+            if (practicePrompt) {
+                practicePrompt.innerText = `Type "${targetWord}":`;
+            }
+
+            userInput.value = '';
+            speakText(displayText);
+        } else {
+            practiceLine.innerText = '🎉 Excellent! You have completed all sentences.';
+            document.querySelector('.practice-controls').style.display = 'none';
+        }
+    }
+
+    // Toggle main practice box display
+    practiceBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (practiceBox.style.display === 'none') {
+            practiceBox.style.display = 'block';
+            currentIndex = 0;
+            currentMode = 0;
+            if (switchModeBtn) switchModeBtn.innerText = getModeLabel(currentMode);
+            document.querySelector('.practice-controls').style.display = 'flex';
+            loadStep(currentIndex);
+        } else {
+            practiceBox.style.display = 'none';
+            if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+        }
+    });
+
+    // Switch between all 3 modes sequentially
+    if (switchModeBtn) {
+        switchModeBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            currentMode = (currentMode + 1) % 3; // Cycle through 0, 1, 2
+            switchModeBtn.innerText = getModeLabel(currentMode);
+            
+            currentIndex = 0; // Reset index on mode change
+            document.querySelector('.practice-controls').style.display = 'flex';
+            loadStep(currentIndex);
+        });
+    }
+
+    // Check user text entry
+    function checkAnswer() {
+        if (userInput.disabled) return; // Prevent checking when locked
+
+        const val = userInput.value.trim();
+        if (val.toLowerCase() === targetWord.toLowerCase()) {
+            feedback.style.color = '#68d391';
+            feedback.innerText = 'Correct!';
+            currentIndex++;
+            setTimeout(() => {
+                loadStep(currentIndex);
+            }, 1000);
+        } else {
+            feedback.style.color = '#fc8181';
+            feedback.innerText = 'Incorrect. Try again!';
+            
+            // Re-read active text block on failure
+            let activeText = lines[currentIndex];
+            if (currentMode === 1) activeText = lines.slice(0, currentIndex + 1).join('\n');
+            if (currentMode === 2) activeText = lines.slice(currentIndex).join('\n');
+            
+            speakText(activeText);
+        }
+    }
+
+    submitBtn.addEventListener('click', checkAnswer);
+    userInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') checkAnswer();
+    });
+}
+
+// Function to setup global search shortcuts
+function initSearchShortcuts() {
+    document.addEventListener('keydown', (event) => {
+        const searchInput = document.getElementById('search-input');
+        if (!searchInput) return;
+
+        // Focus search input on '/' key press
+        if (event.key === '/' && document.activeElement !== searchInput) {
+            event.preventDefault(); // Prevent typing '/' inside input
+            searchInput.focus();
+        }
+
+        // Focus search input on Ctrl+K or Cmd+K key press
+        if ((event.ctrlKey || event.metaKey) && event.code === 'KeyK') {
+            event.preventDefault(); 
+            searchInput.focus();
+            searchInput.select();   
+        }
+    });
+}
+
+// Function to handle interactive test mode (Cloze test)
+function initTestMode() {
+    const testBtn = document.getElementById('test-btn');
+    const testBox = document.getElementById('test-box');
+    const testSentence = document.getElementById('test-sentence');
+    const testInput = document.getElementById('test-input');
+    const testSubmitBtn = document.getElementById('test-submit-btn');
+    const testFeedback = document.getElementById('test-feedback');
+    const overviewText = document.querySelector('.term-overview');
+    const overviewSpans = document.querySelectorAll('.term-overview span');
+
+    if (!testBtn || !overviewSpans.length || !overviewText) return;
+
+    // Convert span elements text into array
+    const lines = Array.from(overviewSpans).map(span => span.innerText.trim());
+    let currentIndex = 0;
+    let targetWord = '';
+
+    // Function to handle speech synthesis using global speech rate
+    function speakText(text) {
+        // Check if speech synthesis is supported
+        if (!('speechSynthesis' in window)) return;
+
+        // Cancel any ongoing speech before starting new speech
+        window.speechSynthesis.cancel();
+
+        // Create utterance instance and assign global speed rate
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.rate = rate_of_speach;
+        utterance.lang = 'en-US';
+
+        // Speak the text with current rate
+        window.speechSynthesis.speak(utterance);
+    }
+
+    // Function to load test step
+    function loadStep(index) {
+        if (index < lines.length) {
+            const currentLine = lines[index];
+            targetWord = getLongestWord(currentLine);
+
+            // Replace target word with blank spaces
+            const maskedLine = currentLine.replace(new RegExp(`\\b${targetWord}\\b`, 'gi'), '__________');
+            
+            // Text to speak without the target word
+            const speakableLine = currentLine.replace(new RegExp(`\\b${targetWord}\\b`, 'gi'), '');
+
+            testSentence.innerText = maskedLine;
+            testInput.value = '';
+            testFeedback.innerText = '';
+            testInput.focus();
+
+            speakText(speakableLine);
+        } else {
+            testSentence.innerText = '🎉 Excellent! You passed the test for all sentences.';
+            document.querySelector('#test-box .practice-controls').style.display = 'none';
+        }
+    }
+
+    // Toggle Test Me mode box and hide overview
+    testBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        
+        // Stop any running speech
+        if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+
+        if (testBox.style.display === 'none') {
+            overviewText.style.display = 'none'; // Hide main overview text
+            testBox.style.display = 'block';
+            currentIndex = 0;
+            document.querySelector('#test-box .practice-controls').style.display = 'flex';
+            loadStep(currentIndex);
+        } else {
+            testBox.style.display = 'none';
+            overviewText.style.display = 'block'; // Show overview text again
+        }
+    });
+
+    // Check user answer
+    function checkAnswer() {
+        const val = testInput.value.trim();
+        if (val.toLowerCase() === targetWord.toLowerCase()) {
+            testFeedback.style.color = '#68d391';
+            testFeedback.innerText = 'Correct!';
+            currentIndex++;
+            setTimeout(() => {
+                loadStep(currentIndex);
+            }, 1000);
+        } else {
+            testFeedback.style.color = '#fc8181';
+            testFeedback.innerText = 'Incorrect. Try again!';
+            
+            // Re-read current sentence without the target word on error
+            const currentLine = lines[currentIndex];
+            const speakableLine = currentLine.replace(new RegExp(`\\b${targetWord}\\b`, 'gi'), '');
+            speakText(speakableLine);
+        }
+    }
+
+    testSubmitBtn.addEventListener('click', checkAnswer);
+    testInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') checkAnswer();
+    });
+}
+
+// Function to inject speech rate toggle button into header
+function initSpeechRateControl() {
+    // Reference to the speaker button element
+    const speakBtn = document.getElementById('speak-btn');
+    if (!speakBtn) return;
+
+    // Create speed control button element
+    const speedBtn = document.createElement('a');
+    speedBtn.href = '#';
+    speedBtn.id = 'speed-btn';
+    speedBtn.className = 'back-link';
+    speedBtn.textContent = `[⚡ ${rate_of_speach}x]`;
+
+    //Insert speed control button right after the speak button
+    speakBtn.insertAdjacentElement('afterend', speedBtn);
+
+    // Toggle speech rate on button click
+    speedBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        
+        // Cycle through speech rate options from 0.5 to 1.0
+        if (rate_of_speach >= 1.0) {
+            rate_of_speach = 0.5;
+        } else {
+            // Round to 1 decimal place to fix floating point math issues
+            rate_of_speach = Math.round((rate_of_speach + 0.1) * 10) / 10;
+        }
+
+        // Update button text with current rate value
+        speedBtn.textContent = `[⚡ ${rate_of_speach}x]`;
+    });
+}
+
+// Main event handler to initialize all functions
+document.addEventListener("DOMContentLoaded", () => {
+    initSpeechRateControl();
+    initTermsListSorting();
+    initSearchLogic();
+    initTermCounter();
+    initSpeechSynthesis();
+    initFocusMode();
+    initSearchShortcuts();
+    initTestMode(); // Added test mode
+});
