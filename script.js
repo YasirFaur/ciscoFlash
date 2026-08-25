@@ -27,22 +27,20 @@ function initTermsListSorting() {
     items.forEach(item => termsList.appendChild(item));
 }
 
-// Function to handle index page search input
+// Function to handle index page search input in real-time
 function initSearchLogic() {
     const searchInput = document.getElementById("search-input");
     if (!searchInput) return;
 
-    searchInput.addEventListener("keydown", (event) => {
-        if (event.key === "Enter") {
-            event.preventDefault(); // Prevent default page reload on Enter
-            const query = searchInput.value.toLowerCase().trim();
-            const items = document.querySelectorAll("#terms-list li");
+    // Trigger search on every input change (typing or deleting)
+    searchInput.addEventListener("input", () => {
+        const query = searchInput.value.toLowerCase().trim();
+        const items = document.querySelectorAll("#terms-list li");
 
-            items.forEach(item => {
-                const text = item.textContent.toLowerCase();
-                item.style.display = text.includes(query) ? "" : "none";
-            });
-        }
+        items.forEach(item => {
+            const text = item.textContent.toLowerCase();
+            item.style.display = text.includes(query) ? "" : "none";
+        });
     });
 }
 
@@ -75,7 +73,7 @@ function initSpeechSynthesis() {
                 
                 utterance.onend = () => { speakBtn.innerText = '[ 🔊 Listen ]'; };
                 utterance.onerror = () => { speakBtn.innerText = '[ 🔊 Listen ]'; };
-                
+
                 utterance.rate = rate_of_speach;
                 window.speechSynthesis.speak(utterance);
                 speakBtn.innerText = '[ ⏹️ Stop ]';
