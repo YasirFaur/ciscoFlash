@@ -165,16 +165,29 @@ header h1 {
 
 /* Change only the placeholder text color */
 #search-input::placeholder {
-    color: #14254c;
+    color: #f6f6f3;
     opacity: 1;
 }
 
 #search-input {
+    background-color: #14254c;
+    color: #f6f6f3;
     width: 100%;          
     max-width: 320px;   
     padding: 8px 12px; 
-    box-sizing: border-box; 
     font-size: 0.9rem;
+
+    /* Remove default browser borders */
+    border: none;
+
+    /* Set top and bottom borders only */
+    border-top: 1px solid #f6f6f3;
+    border-bottom: 1px solid #f6f6f3;
+
+    /* Keep border radius for top and bottom brackets effect */
+    border-radius: 6px;
+    outline: none;
+    box-sizing: border-box;
 }
 
 /* Styling for descriptions outside the anchor tag */
@@ -349,5 +362,37 @@ pre::-webkit-scrollbar-thumb:hover {
     color: #ffffff;
 }
 
+/* Container for the terms list to limit height and enable scrolling */
+#terms-list {
+    /* Limit height to show roughly 3 items */
+    max-height: 220px; 
+    
+    /* Enable vertical scrolling */
+    overflow-y: auto; 
+    
+    /* Smooth scrolling feel */
+    scroll-behavior: smooth;
+    
+    /* Layout styling adjustments */
+    padding-right: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 10px 15px;
+}
+
+/* Optional: Custom scrollbar styling for a cleaner look */
+#terms-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+#terms-list::-webkit-scrollbar-thumb {
+    background-color: #14254c;
+    border-radius: 3px;
+}
+
+#terms-list::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}
 
 
