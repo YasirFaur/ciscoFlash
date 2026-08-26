@@ -25,16 +25,16 @@
             </div>
 
             <section class="term-section">    
-                <h1>2G <span>(second-generation cellular network technology)</span></h1>            
+                <h1>Dynamic NAT <span>(Dynamic Network Address Translation)</span></h1>            
                 <!-- HTML structure with span elements for 2G term overview -->
                 <p class="term-overview">
-                    <span>2G stands for second-generation cellular network technology introduced in the 1990s.</span>
-                    <span>It shifted mobile signals from old analog systems to clear digital signals.</span>
-                    <span>This upgrade introduced text messages, known as SMS, and basic picture messaging.</span>
-                    <span>It also allowed limited, slow data access for very simple web browsing.</span>
-                    <span>2G provided better call quality and better security than first-generation networks.</span>
-                    <span>Although very slow by today's standards, it was a massive step for mobile phones.</span>
-                    <span>Today, many countries are shutting down 2G to make room for 5G.</span>
+                    <span>Dynamic NAT translates private IP addresses using a pool of public IP addresses.</span>
+                    <span>When a host accesses the internet, the router assigns an available public IP from the pool.</span>
+                    <span>The router records this active connection inside the NAT table dynamically.</span>
+                    <span>Once the connection ends, the public IP address returns to the pool for other devices to use.</span>
+                    <span>If all public IP addresses in the pool are busy, new connections are dropped.</span>
+                    <span>Unlike Static NAT, the mapping is temporary and changes based on availability.</span>
+                    <span>Overall, Dynamic NAT automatically manages public IP address sharing for local hosts.</span>
                 </p>
 
                 <!-- Test Me Container -->

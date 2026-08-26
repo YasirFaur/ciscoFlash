@@ -1,59 +1,6 @@
-The CPU is the primary processor and central brain of a router. It handles critical network tasks, system operations, and routing calculations. The processor executes the Cisco IOS operating system code loaded in RAM. It processes routing protocol updates and determines the best paths for data. It also manages device configurations and responds to direct management commands. Overall, a fast CPU ensures smooth packet handling and stable router performance.
 
-RAM 
-Random Access Memory is fast volatile memory used by a router during operation. It stores the active running operating system, such as Cisco IOS. The router holds its current running configuration and ARP tables in RAM. It also maintains dynamic routing tables and buffers data packets here. However, all data stored in RAM is lost when the router reboots. Overall, sufficient RAM helps the router process network tasks quickly.
 
-Cisco IOS stands for Internetwork Operating System. It is the main operating system software that runs inside Cisco routers. The system loads into RAM and controls all hardware and network operations. It allows engineers to configure interfaces, routing protocols, and security features. You can manage it using command line interface commands or graphical tools. Overall, IOS provides the core intelligence for efficient network traffic forwarding.
 
-LSA stands for Link-State Advertisement in OSPF.
-It is a small data packet containing information about local network links and router status.
-Routers build and share LSAs with all their OSPF neighbors in an area.
-Every router collects these advertisements to build a complete topology database.
-Using this database, the router calculates the shortest and best path to each destination.
-LSAs are re-sent only when network changes occur to save bandwidth.
-Overall, LSAs help keep all routers in an OSPF network synchronized.
-
-DORA stands for Discover, Offer, Request, and Acknowledge. It represents the four steps a DHCP client uses to get an IP address. First, the client sends a Discover message to find a DHCP server. The server responds with an Offer message that includes an available IP address. Next, the client sends a Request message to accept the offered address. Finally, the server sends an Acknowledge message to confirm the assignment.
-
-DUAL stands for Diffusing Update Algorithm, used exclusively by EIGRP.
-It calculates the best loop-free paths to every network destination.
-The algorithm selects a primary route called the Successor.
-It also identifies backup paths, known as Feasible Successors, for immediate failover.
-If a primary link fails, DUAL switches instantly to the backup route without recomputing.
-This mechanism guarantees rapid convergence and prevents routing loops entirely.
-Overall, DUAL makes EIGRP fast, efficient, and highly reliable.
-
-LSDB stands for Link-State Database in OSPF.
-It stores all the Link-State Advertisements received from neighbor routers.
-This database acts as a complete map of the whole network topology.
-Every router in the same OSPF area maintains an identical LSDB.
-The router runs the Shortest Path First algorithm on this database to find optimal paths.
-Once calculated, the best paths are placed into the routing table.
-Overall, LSDB provides full network visibility for accurate routing decisions.
-
-EGP stands for Exterior Gateway Protocol. It is a group of protocols used to route data between different autonomous systems. Unlike IGPs, EGPs connect separate organizations across the global internet. They handle routing information across broad external networks. Border Gateway Protocol, or BGP, is the main EGP used today. Routers rely on EGPs to exchange paths between service provider networks. Overall, EGPs form the primary backbone for global internet traffic.
-
-BGP stands for Border Gateway Protocol. It is the primary Exterior Gateway Protocol used to connect the global internet. BGP exchanges routing details between different independent networks and service providers. Instead of using simple speed metrics, it uses path vectors and complex policies. Routers use BGP to choose stable and secure paths across external domains. It ensures data reaches distant destinations reliably across international networks. Overall, BGP is the fundamental protocol that keeps the internet connected.
-
-IGP stands for Interior Gateway Protocol. It is a group of routing protocols used within a single autonomous network. Networks use IGPs to automatically exchange routing details inside the organization. Common IGP examples include OSPF, EIGRP, RIP, and IS-IS. They allow routers to find optimal internal paths for local data traffic. IGPs focus on speed, low delay, and quick network updates. Overall, IGPs keep internal communications running smoothly.
-
-IS-IS stands for Intermediate System to Intermediate System routing protocol. It is a powerful link-state protocol used mainly by large service providers. Like OSPF, it builds a complete map of the network topology. Every router calculates the best paths using the Dijkstra algorithm. It sends updates only when changes occur instead of periodic full updates. The protocol is highly scalable and supports both IPv4 and IPv6 traffic. Overall, IS-IS ensures fast and efficient routing across massive networks.
-
-RIPv2 is an improved version of the RIP distance vector protocol. It still uses hop count to select the best route to a destination. Unlike RIPv1, RIPv2 supports classless routing and includes subnet masks in updates. It sends periodic routing updates to direct neighbors to keep tables current. However, it is still limited by a maximum hop count of 15. Overall, RIPv2 works better than version 1 for small basic networks.
-
-RIPv1 is an early distance vector routing protocol used in small networks. It relies solely on hop count to choose the best path. The protocol sends full routing table updates to neighbors every 30 seconds. Because it is a classful protocol, it does not send subnet mask details in updates. This lack of metric options makes it weaker for modern network designs. Today, RIPv1 is mostly obsolete and replaced by better protocols
-
-ROM stands for Read-Only Memory in a Cisco router. It holds the basic bootstrap software needed during system startup. This minimal program helps locate and load the Cisco IOS operating system. ROM also stores simple hardware diagnostic tests to check device health. The stored instructions are permanent and remain safe when power is lost. Overall, ROM ensures the router boots up reliably every single time.
-
-NVRAM stands for Non-Volatile Random Access Memory in a router. It stores the startup configuration file safely when the power goes off. The router reads this saved configuration every time it reboots. Unlike RAM, NVRAM keeps all stored settings without needing electrical power. Network engineers save changes here to preserve their active router settings. It plays a key role in keeping router configurations permanent and reliable.
-
-RIP stands for Routing Information Protocol in computer networking. It is a simple distance vector protocol used to find the best path. The protocol selects routes based entirely on the lowest hop count. Routers send periodic updates to share routing tables with direct neighbors. However, sending these full updates repeatedly can waste network bandwidth. RIP works best in small and basic network environments.
-
-OSPF stands for Open Shortest Path First routing protocol. It is a popular link-state protocol that builds a complete topology map. Every router calculates the best paths using Dijkstra algorithm. Instead of periodic updates, it sends triggered updates when changes occur. This efficient mechanism helps save network bandwidth and improves speed. OSPF works very well in large and modern enterprise networks.
-
-EIGRP stands for Enhanced Interior Gateway Routing Protocol created by Cisco. It is an advanced distance vector protocol that acts as a hybrid model. The protocol uses link-state features for fast neighbor discovery. It learns specific paths from neighboring routers like distance vector protocols. Routers send partial updates only when network topology changes occur. This smart approach saves network bandwidth and speeds up convergence. EIGRP works great for large Cisco enterprise networks.
-
-Dijkstra algorithm is a famous method used in link-state routing protocols like OSPF. It helps routers calculate the shortest path to every destination in the network. The algorithm uses the complete topology map stored in the link-state database. It builds a tree of shortest paths starting from the local router as the root. This mathematical process ensures fast and accurate path selection. Routers run Dijkstra again whenever a network change triggers an update.
 
 
 
