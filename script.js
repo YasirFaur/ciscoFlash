@@ -460,16 +460,54 @@ function initApp() {
     }, 3000);
 }
 
+// Function to block right-click and common developer tool shortcuts
+function preventInspection() {
+    // Disable right-click context menu
+    document.addEventListener("contextmenu", (e) => {
+        e.preventDefault();
+        return false;
+    });
+
+    // Disable DevTools shortcuts
+    document.addEventListener("keydown", (e) => {
+        // Block F12 key (using both e.key and e.code for cross-browser support)
+        if (e.key === "F12" || e.code === "F12") {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+        }
+
+        // Block Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C
+        if (e.ctrlKey && e.shiftKey && (e.code === "KeyI" || e.code === "KeyJ" || e.code === "KeyC")) {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+        }
+
+        // Block Ctrl+U (View Source) and Ctrl+S (Save Page)
+        if (e.ctrlKey && (e.code === "KeyU" || e.code === "KeyS")) {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+        }
+    }, true); // Use capture phase to catch event before other listeners
+}
+
 // Main event handler to initialize all functions
 document.addEventListener("DOMContentLoaded", () => {
-    initApp();
-    preventInspection();
-    initSpeechRateControl();
-    initTermsListSorting();
-    initSearchLogic();
-    initTermCounter();
-    initSpeechSynthesis();
-    initFocusMode();
-    initSearchShortcuts();
-    initTestMode(); // Added test mode
+    // 1. Initialize core feature systems
+    try { initSpeechRateControl(); } catch (e) { console.error(e); }
+    try { initTermsListSorting(); } catch (e) { console.error(e); }
+    try { initSearchLogic(); } catch (e) { console.error(e); }
+    try { initTermCounter(); } catch (e) { console.error(e); }
+    try { initSpeechSynthesis(); } catch (e) { console.error(e); }
+    try { initFocusMode(); } catch (e) { console.error(e); }
+    try { initSearchShortcuts(); } catch (e) { console.error(e); }
+    try { initTestMode(); } catch (e) { console.error(e); }
+
+    // 2. Initialize copyright & integrity checks
+    try { initApp(); } catch (e) { console.error(e); }
+
+    // 3. Apply inspection protection last
+    try { preventInspection(); } catch (e) { console.error(e); }
 });
