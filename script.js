@@ -412,8 +412,58 @@ function initSpeechRateControl() {
     });
 }
 
+// Function to append copyright notice after footer
+function appendCopyright() {
+    // Create the copyright element
+    const copyrightParagraph = document.createElement("p");
+    copyrightParagraph.className = "copyright";
+    
+    // Set text content and designer name
+    copyrightParagraph.innerHTML = 'Designed by <span class="designer-name">Yasir Faur</span>, all rights reserved © 2026';
+
+    // Find the footer element
+    const footer = document.querySelector("footer");
+
+    // Insert the paragraph right after the footer
+    if (footer) {
+        footer.insertAdjacentElement("afterend", copyrightParagraph);
+    } else {
+        document.body.appendChild(copyrightParagraph);
+    }
+}
+
+// Function to append copyright and verify author name
+function initApp() {
+    // Create and attach copyright notice
+    const copyrightParagraph = document.createElement("p");
+    copyrightParagraph.className = "copyright";
+    copyrightParagraph.innerHTML = 'Designed by <span class="designer-name">Yasir Faur</span>, all rights reserved © 2026';
+
+    const footer = document.querySelector("footer");
+    if (footer) {
+        footer.insertAdjacentElement("afterend", copyrightParagraph);
+    } else {
+        document.body.appendChild(copyrightParagraph);
+    }
+
+    // Check if element or author name is removed/modified
+    setInterval(() => {
+        const copyrightElem = document.querySelector(".copyright");
+        const designerNameElem = document.querySelector(".designer-name");
+
+        // Verify both element existence and exact designer name text
+        if (!copyrightElem || !designerNameElem || designerNameElem.textContent.trim() !== "Yasir Faur") {
+            // Break page functionality if copyright or name is deleted/altered
+            document.body.innerHTML = "";
+            alert("Unauthorized copy detected.");
+        }
+    }, 3000);
+}
+
 // Main event handler to initialize all functions
 document.addEventListener("DOMContentLoaded", () => {
+    initApp();
+    preventInspection();
     initSpeechRateControl();
     initTermsListSorting();
     initSearchLogic();
