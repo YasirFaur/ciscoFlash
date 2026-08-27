@@ -493,6 +493,71 @@ function preventInspection() {
     }, true); // Use capture phase to catch event before other listeners
 }
 
+// Function to handle terms list auto scroll
+function initTermsListAutoScroll() {
+    // Get list element
+    const termsList = document.getElementById('terms-list');
+    if (!termsList) return;
+
+    let scrollInterval = null;
+
+    // Start auto scroll logic
+    const startAutoScroll = () => {
+        if (scrollInterval) return;
+        scrollInterval = setInterval(() => {
+            // Check scroll reach end point accurately
+            const isAtBottom = Math.ceil(termsList.scrollTop + termsList.clientHeight) >= termsList.scrollHeight;
+            
+            if (isAtBottom) {
+                // Reset smoothly to top
+                termsList.scrollTop = 0;
+            } else {
+                // Increment scroll position
+                termsList.scrollTop += 1;
+            }
+        }, 40);
+    };
+
+    // Stop auto scroll logic
+    const stopAutoScroll = () => {
+        clearInterval(scrollInterval);
+        scrollInterval = null;
+    };
+
+    // Begin scrolling
+    startAutoScroll();
+
+    // Event listeners for user interaction
+    termsList.addEventListener('mouseenter', stopAutoScroll);
+    termsList.addEventListener('mouseleave', startAutoScroll);
+    termsList.addEventListener('touchstart', stopAutoScroll, { passive: true });
+    termsList.addEventListener('touchend', startAutoScroll, { passive: true });
+}
+
+
+
+// A2-B1: Handle direct professional share using published GitHub link
+function shareProfessionalAchievement(platform) {
+    // Official published GitHub Pages link
+    const githubUrl = encodeURIComponent("https://yasirfaur.github.io/ciscoFlash/");
+
+    let shareUrl = "";
+
+    if (platform === 'linkedin') {
+        // LinkedIn share URL endpoint
+        shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${githubUrl}`;
+    } else if (platform === 'facebook') {
+        // Facebook share URL endpoint
+        shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${githubUrl}`;
+    }
+
+    // Open share window popup
+    if (shareUrl) {
+        window.open(shareUrl, '_blank', 'width=600,height=600,scrollbars=yes,resizable=yes');
+    }
+}
+
+
 // Main event handler to initialize all functions
 document.addEventListener("DOMContentLoaded", () => {
     // 1. Initialize core feature systems
@@ -505,9 +570,12 @@ document.addEventListener("DOMContentLoaded", () => {
     try { initSearchShortcuts(); } catch (e) { console.error(e); }
     try { initTestMode(); } catch (e) { console.error(e); }
 
+
     // 2. Initialize copyright & integrity checks
     try { initApp(); } catch (e) { console.error(e); }
 
     // 3. Apply inspection protection last
     try { preventInspection(); } catch (e) { console.error(e); }
+
+    try { initTermsListAutoScroll(); } catch (e) { console.error(e); }
 });
