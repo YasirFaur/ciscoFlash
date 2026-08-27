@@ -535,29 +535,6 @@ function initTermsListAutoScroll() {
 }
 
 
-
-// A2-B1: Handle direct professional share using published GitHub link
-function shareProfessionalAchievement(platform) {
- // Official published GitHub Pages link
-    const githubUrl = encodeURIComponent("https://yasirfaur.github.io/ciscoFlash/");
-
-    let shareUrl = "";
-
-    if (platform === 'facebook') {
-        // Facebook sharer endpoint
-        shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${githubUrl}`;
-    } else if (platform === 'linkedin') {
-        // LinkedIn share endpoint
-        shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${githubUrl}`;
-    }
-
-    // Open popup share window
-    if (shareUrl) {
-        window.open(shareUrl, '_blank', 'width=600,height=500');
-    }
-}
-
-
 // Main event handler to initialize all functions
 document.addEventListener("DOMContentLoaded", () => {
     // 1. Initialize core feature systems
