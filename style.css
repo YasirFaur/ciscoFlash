@@ -97,7 +97,7 @@ footer {
 }
 
 /* Social text button styling */
-.btn-link {
+.btn-link, .div-stage2, .div-stage3, .div-stage4 {
     display: inline-block;
     border-left: 1px solid #f6f6f3;
     border-right: 1px solid #f6f6f3;
@@ -164,12 +164,16 @@ header h1 {
 }
 
 /* Change only the placeholder text color */
-#search-input::placeholder {
+#search-input::placeholder,
+#longest-word-input::placeholder,
+#stage3-word-input {
     color: #f6f6f3;
     opacity: 1;
 }
 
-#search-input {
+#search-input,
+#longest-word-input,
+#stage3-word-input {
     background-color: #14254c;
     color: #f6f6f3;
     width: 100%;          
@@ -241,12 +245,51 @@ header h1 {
     margin-bottom: 4px; 
 }
 
+/* Odd lines: White text */
 .term-overview span:nth-child(odd) {
     color: #ffffff;
 }
 
+/* Even lines: Cyan / Accent text */
 .term-overview span:nth-child(even) {
-    color: #a0aec0;
+    color: #636363;
+}
+
+/* Center main section properly */
+main {
+    justify-content: center;
+    align-items: center;
+}
+
+/* Center term display box */
+#term-display-box {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5px;
+    border-top: 1px solid #f6f6f3;
+    border-bottom: 1px solid #f6f6f3;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+#term-display-box-stage2{
+ width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5px;
+    border-top: 1px solid #f6f6f3;
+    border-bottom: 1px solid #f6f6f3;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+
+/* Make each span inside the description box appear on a new line with padding */
+#card-term-desc span {
+    display: block;
+    margin-bottom: 8px;
+    line-height: 1.5;
 }
 
 /* Style for code blocks with horizontal scroll */
@@ -395,4 +438,42 @@ pre::-webkit-scrollbar-thumb:hover {
     background-color: #f1f1f1;
 }
 
+/*Reset button borders and set side borders only */
+#check-word-btn,
+#stage3-check-btn,
+#stage4-check-btn {
+    background: transparent;
+    color: #f6f6f3;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    border-left: 1px solid #f6f6f3;
+    border-right: 1px solid #f6f6f3;
+    border-radius: 6px;
+    padding: 6px 12px;
+    margin-left: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
 
+#check-word-btn:hover,
+#stage3-check-btn:hover,
+#stage4-check-btn:hover {
+    background-color: #f6f6f3;
+    color: #14254c;
+}
+
+/* Disable user text selection globally */
+body {
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* IE / Edge */
+    user-select: none;        /* Standard */
+}
+
+/* Allow text selection inside input fields so typing works properly */
+input, textarea {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}

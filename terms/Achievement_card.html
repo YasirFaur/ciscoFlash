@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ciscoFlash - Index</title>
+    <!-- Link external CSS stylesheet -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+    <!-- Header section with site title -->
+    <header>
+        <h1>ciscoFlash</h1>
+        <p class="tagline">Cisco Terms Simplified in a Flash.</p>
+    </header>
+
+    <main>
+
+        <!-- Timer Display -->
+        <div id="test-timer" 
+        style="
+        display: inline-block;
+        font-family: monospace; 
+        font-size: 20px; 
+        color: #ffffff; 
+        margin-bottom: 20px; 
+        text-align: center; 
+        font-weight: bold;
+        border-left: 1px solid #f6f6f3;
+        border-right: 1px solid #f6f6f3;
+        border-radius: 10px;
+        padding: 10px;">
+            00:00:00
+        </div>
+
+        <!-- Stage 1 -->
+        <div id="term-display-box" class="stage1">
+            
+            <!-- Listen Button for Stage 1 -->
+            <a href="#" id="speak-btn-07" class="btn-link"> Stage 1: 🔊 Listen </a>
+
+            <h2 id="card-term-title" style="color: #ffffff;">--</h2>
+            <p id="card-term-desc" class="term-overview">--</p>
+        </div>
+
+        <!-- Stage 2 Container (Hidden by default) -->
+        <div id="term-display-box-stage2" class="stage2" style="display: none;">       
+            <div class="div-stage2"> Stage 2: Focus </div>   
+            <!-- Active Line Display -->
+            <p id="stage2-line-text" class="term-overview" style="color: #ffffff; min-height: 48px; margin-bottom: 15px;"></p>
+
+            <!-- Word Test Input Form -->
+            <div id="stage2-input-area" style="margin-top: 15px;">
+                <input type="text" id="longest-word-input" onpaste="return false;" ondrop="return false;" placeholder="Type the longest word..." autocomplete="off">
+                <button id="check-word-btn">Check</button>
+            </div>
+            
+            <!-- Feedback Message -->
+            <div id="stage2-feedback" style="margin-top: 10px; font-size: 14px; min-height: 20px;"></div>
+        </div>
+
+        <!-- Stage 3 Container (Hidden by default) -->
+        <div id="term-display-box-stage3" class="stage3" style="display: none;">
+            <div class="div-stage3"> Stage 3: Mastery </div>
+            
+            <!-- Display all remaining lines -->
+            <div id="stage3-lines-container" class="term-overview" style="color: #ffffff; min-height: 48px; margin-bottom: 15px; text-align: left;"></div>
+
+            <!-- Word Test Input Form -->
+            <div id="stage3-input-area" style="margin-top: 15px;">
+                <input type="text" id="stage3-word-input" onpaste="return false;" ondrop="return false;" placeholder="Type the longest word of line 1..." autocomplete="off">
+                <button id="stage3-check-btn">Check</button>
+            </div>
+            
+            <!-- Feedback Message -->
+            <div id="stage3-feedback" style="margin-top: 10px; font-size: 14px; min-height: 20px;"></div>
+        </div>
+
+        <!-- Stage 4 Container (Hidden by default) -->
+        <div id="term-display-box-stage4" class="stage4" style="display: none;">
+            <div class="div-stage4"> Stage 4: Final Challenge </div>
+            
+            <!-- Active cumulative sentences display -->
+            <div id="stage4-lines-container" class="term-overview" style="color: #ffffff; min-height: 48px; margin-bottom: 15px; text-align: left;"></div>
+
+            <!-- Sentence Test Input Form -->
+            <div id="stage4-input-area" style="margin-top: 15px;">
+                <input type="text" id="stage4-sentence-input" onpaste="return false;" ondrop="return false;" placeholder="Type the last sentence..." autocomplete="off" style="padding: 8px 12px; border-radius: 6px; border: 1px solid #00f5d4; background: #1a1a1a; color: #fff; width: 75%; text-align: left; font-size: 15px;">
+                <button id="stage4-check-btn" class="btn-link">Check</button>
+            </div>
+    
+    <!-- Feedback Message -->
+    <div id="stage4-feedback" style="margin-top: 10px; font-size: 14px; min-height: 20px;"></div>
+</div>
+
+    </main>
+
+    <!-- Footer section with social links -->
+    <footer>
+       <!-- Social links as text buttons inside footer -->
+        <div>
+            <a href="https://www.facebook.com/PioneeersTech/" class="btn-link" target="_blank" rel="noopener noreferrer">FaceBook</a>
+            <a href="https://www.linkedin.com/in/yasir-faur-68b66713b/" class="btn-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://www.youtube.com/c/YasirFaur" class="btn-link" target="_blank" rel="noopener noreferrer">YouTube</a>
+            <a href="https://wa.me/905342694115" class="btn-link" target="_blank" rel="noopener noreferrer">WhatsApp</a>        
+        </div>
+    </footer>
+
+    <!-- Copyright notice outside footer -->
+
+    <script src="../Achievement_card.js"></script>
+    <script src="../script.js"></script>
+
+</body>
+</html>

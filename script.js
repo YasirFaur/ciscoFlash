@@ -379,36 +379,39 @@ function initTestMode() {
     });
 }
 
-// Function to inject speech rate toggle button into header
-function initSpeechRateControl() {
-    // Reference to the speaker button element
-    const speakBtn = document.getElementById('speak-btn');
-    if (!speakBtn) return;
+//Function to disable right click, shortcuts, copy, selection, and paste
+function preventInspection() {
+    // Disable right click globally
+    document.addEventListener("contextmenu", (e) => e.preventDefault());
 
-    // Create speed control button element
-    const speedBtn = document.createElement('a');
-    speedBtn.href = '#';
-    speedBtn.id = 'speed-btn';
-    speedBtn.className = 'back-link';
-    speedBtn.textContent = `[⚡ ${rate_of_speach}x]`;
+    // Disable copy, cut, and drop globally
+    document.addEventListener("copy", (e) => e.preventDefault());
+    document.addEventListener("cut", (e) => e.preventDefault());
+    document.addEventListener("drop", (e) => e.preventDefault());
 
-    //Insert speed control button right after the speak button
-    speakBtn.insertAdjacentElement('afterend', speedBtn);
-
-    // Toggle speech rate on button click
-    speedBtn.addEventListener('click', (e) => {
+    // Block paste globally in the capture phase (works for dynamic/hidden inputs)
+    document.addEventListener("paste", (e) => {
         e.preventDefault();
-        
-        // Cycle through speech rate options from 0.5 to 1.0
-        if (rate_of_speach >= 1.0) {
-            rate_of_speach = 0.5;
-        } else {
-            // Round to 1 decimal place to fix floating point math issues
-            rate_of_speach = Math.round((rate_of_speach + 0.1) * 10) / 10;
-        }
+        return false;
+    }, true);
 
-        // Update button text with current rate value
-        speedBtn.textContent = `[⚡ ${rate_of_speach}x]`;
+    // Disable text selection outside inputs
+    document.addEventListener("selectstart", (e) => {
+        if (e.target.tagName !== "INPUT" && e.target.tagName !== "TEXTAREA") {
+            e.preventDefault();
+        }
+    });
+
+    // Block keyboard shortcuts (Ctrl+V, Ctrl+U, F12)
+    document.addEventListener("keydown", (e) => {
+        const key = e.key.toLowerCase();
+        if (
+            key === "f12" ||
+            (e.ctrlKey && e.shiftKey && (key === "i" || key === "j" || key === "c")) ||
+            (e.ctrlKey && (key === "u" || key === "v" || key === "p"))
+        ) {
+            e.preventDefault();
+        }
     });
 }
 
@@ -460,37 +463,31 @@ function initApp() {
     }, 3000);
 }
 
-// Function to block right-click and common developer tool shortcuts
+//Function to disable context menu, shortcuts, copying, and selection
 function preventInspection() {
-    // Disable right-click context menu
-    document.addEventListener("contextmenu", (e) => {
-        e.preventDefault();
-        return false;
+    // Disable right click
+    document.addEventListener("contextmenu", (e) => e.preventDefault());
+
+    // Disable selection and copy events
+    document.addEventListener("copy", (e) => e.preventDefault());
+    document.addEventListener("cut", (e) => e.preventDefault());
+    document.addEventListener("selectstart", (e) => {
+        // Allow selection inside input elements only
+        if (e.target.tagName !== "INPUT" && e.target.tagName !== "TEXTAREA") {
+            e.preventDefault();
+        }
     });
 
-    // Disable DevTools shortcuts
+    // Disable F12 and inspect key combinations
     document.addEventListener("keydown", (e) => {
-        // Block F12 key (using both e.key and e.code for cross-browser support)
-        if (e.key === "F12" || e.code === "F12") {
+        if (
+            e.key === "F12" ||
+            (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J" || e.key === "C")) ||
+            (e.ctrlKey && e.key === "U")
+        ) {
             e.preventDefault();
-            e.stopPropagation();
-            return false;
         }
-
-        // Block Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C
-        if (e.ctrlKey && e.shiftKey && (e.code === "KeyI" || e.code === "KeyJ" || e.code === "KeyC")) {
-            e.preventDefault();
-            e.stopPropagation();
-            return false;
-        }
-
-        // Block Ctrl+U (View Source) and Ctrl+S (Save Page)
-        if (e.ctrlKey && (e.code === "KeyU" || e.code === "KeyS")) {
-            e.preventDefault();
-            e.stopPropagation();
-            return false;
-        }
-    }, true); // Use capture phase to catch event before other listeners
+    });
 }
 
 // Function to handle terms list auto scroll
@@ -534,6 +531,44 @@ function initTermsListAutoScroll() {
     termsList.addEventListener('touchend', startAutoScroll, { passive: true });
 }
 
+function mastety_card_button(){
+
+    const termHeader = document.querySelector(".term-header");
+
+    if (termHeader) {
+        // Create the new card button element
+        const cardBtn = document.createElement("a");
+        cardBtn.href = "#";
+        cardBtn.id = "mastery-card-btn";
+        cardBtn.className = "back-link";
+        cardBtn.innerHTML = "[🎓 Mastery Card]";
+
+        // Append button to the header
+        termHeader.appendChild(cardBtn);
+
+        //Click handler to extract HTML content with spans intact
+        cardBtn.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            const termTitle = document.querySelector("section.term-section h1") 
+                ? document.querySelector("section.term-section h1").innerText.trim() 
+                : "";
+
+            // Extract raw HTML to keep all <span> tags
+            const termDesc = document.querySelector("p.term-overview") 
+                ? document.querySelector("p.term-overview").innerHTML.trim() 
+                : "";
+
+            // Store raw HTML locally
+            sessionStorage.setItem("activeTermTitle", termTitle);
+            sessionStorage.setItem("activeTermDesc", termDesc);       
+            
+            // Navigate to testing hall
+            window.location.href = 'Achievement_card.html';
+        });
+    }
+}
+
 
 // Main event handler to initialize all functions
 document.addEventListener("DOMContentLoaded", () => {
@@ -546,7 +581,7 @@ document.addEventListener("DOMContentLoaded", () => {
     try { initFocusMode(); } catch (e) { console.error(e); }
     try { initSearchShortcuts(); } catch (e) { console.error(e); }
     try { initTestMode(); } catch (e) { console.error(e); }
-
+    try{ mastety_card_button(); } catch (e) { console.error(e); }
 
     // 2. Initialize copyright & integrity checks
     try { initApp(); } catch (e) { console.error(e); }
