@@ -6,7 +6,7 @@
     <title>ciscoFlash - Index</title>
     <!-- Link external CSS stylesheet -->
     <link rel="stylesheet" href="../style.css">
-</head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script></head>
 <body>
 
     <!-- Header section with site title -->
@@ -69,7 +69,7 @@
 
             <!-- Word Test Input Form -->
             <div id="stage3-input-area" style="margin-top: 15px;">
-                <input type="text" id="stage3-word-input" onpaste="return false;" ondrop="return false;" placeholder="Type the longest word of line 1..." autocomplete="off">
+                <input type="text" id="stage3-word-input" onpaste="return false;" ondrop="return false;" placeholder="Type the required word of line 1..." autocomplete="off">
                 <button id="stage3-check-btn">Check</button>
             </div>
             
@@ -86,13 +86,32 @@
 
             <!-- Sentence Test Input Form -->
             <div id="stage4-input-area" style="margin-top: 15px;">
-                <input type="text" id="stage4-sentence-input" onpaste="return false;" ondrop="return false;" placeholder="Type the last sentence..." autocomplete="off" style="padding: 8px 12px; border-radius: 6px; border: 1px solid #00f5d4; background: #1a1a1a; color: #fff; width: 75%; text-align: left; font-size: 15px;">
+                <input type="text" id="stage4-sentence-input" onpaste="return false;" ondrop="return false;" placeholder="Type the last sentence..." autocomplete="off">
                 <button id="stage4-check-btn" class="btn-link">Check</button>
-            </div>
+            </div>            
     
-    <!-- Feedback Message -->
-    <div id="stage4-feedback" style="margin-top: 10px; font-size: 14px; min-height: 20px;"></div>
-</div>
+            <!-- Feedback Message -->
+            <div id="stage4-feedback" style="margin-top: 10px; font-size: 14px; min-height: 20px;"></div>
+        </div>
+
+        <!-- Final Achievement Card Container (Hidden by default) -->
+        <div id="stage-final-container" style="display: block; text-align: center; margin-top: 20px;">
+            
+            <!-- Card Content to be captured by html2canvas -->
+            <div id="achievement-card" style="background: #14254c; border: 2px solid #00f5d4; border-radius: 12px; padding: 25px; color: #ffffff; max-width: 500px; margin: 0 auto; box-shadow: 0 0 15px rgba(0,245,212,0.2);">
+                <h2 style="color: #00f5d4; margin-top: 0;">Certificate of Mastery</h2>
+                <p style="font-size: 16px; margin: 15px 0;">Congratulations! You have successfully completed all 4 stages of the test.</p>
+                <div style="font-size: 14px; color: #f6f6f3; margin-top: 20px; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 15px;">
+                    <span>Status: Verified Master</span>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div style="margin-top: 20px;">
+                <button id="download-card-btn" class="btn-link" style="padding: 10px 20px; font-size: 15px;">Download Certificate</button>
+            </div>
+
+        </div>
 
     </main>
 

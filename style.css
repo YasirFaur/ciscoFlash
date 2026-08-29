@@ -166,14 +166,16 @@ header h1 {
 /* Change only the placeholder text color */
 #search-input::placeholder,
 #longest-word-input::placeholder,
-#stage3-word-input {
+#stage3-word-input::placeholder,
+#stage4-sentence-input::placeholder {
     color: #f6f6f3;
     opacity: 1;
 }
 
 #search-input,
 #longest-word-input,
-#stage3-word-input {
+#stage3-word-input,
+#stage4-sentence-input {
     background-color: #14254c;
     color: #f6f6f3;
     width: 100%;          
@@ -451,7 +453,7 @@ pre::-webkit-scrollbar-thumb:hover {
     border-right: 1px solid #f6f6f3;
     border-radius: 6px;
     padding: 6px 12px;
-    margin-left: 5px;
+    margin: 10px;
     transition: background-color 0.3s, color 0.3s;
 }
 

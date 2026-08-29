@@ -74,21 +74,25 @@ function processCurrentLine() {
     if (currentLineIndex < stage2Sentences.length) {
         const currentSentence = stage2Sentences[currentLineIndex];
         
-        targetLongestWord = getLongestWord(currentSentence);
-        
+        targetLongestWord = getLongestWord(currentSentence);        
         lineDisplay.innerText = currentSentence;
-        inputEl.value = "";
-        inputEl.placeholder = `Type: ${targetLongestWord}`;
+        inputEl.value = "";        
+        inputEl.placeholder = "";
         feedbackEl.innerText = "";
 
         inputEl.focus();
-        speakText(currentSentence);
+        
+        speakText(currentSentence, () => {
+        speakText(`Type: ${targetLongestWord}`); 
+        inputEl.placeholder = `Type: ${ targetLongestWord}`;
+        });
+
     } else {
         // Stage 2 Complete -> Announce and switch to Stage 3 after short delay
-        lineDisplay.innerText = "Great focus! Stage 2 Completed.";
+        lineDisplay.innerText = "Stage 2 Completed.";
         document.getElementById("stage2-input-area").style.display = "none";
         
-        speakText("Great focus! Stage two completed.", () => {
+        speakText("Stage 2 completed.", () => {
             setTimeout(() => {
                 switchToStage3();
             }, 1000);
@@ -141,13 +145,16 @@ function processStage3Round() {
 
         // Update UI: Show target word inside placeholder for warm-up interaction
         inputEl.value = "";
-        inputEl.placeholder = `Type: ${stage3TargetWord}`;
+        inputEl.placeholder = "";
         feedbackEl.innerText = "";
         inputEl.focus();
 
         // Read all remaining sentences together
         const fullTextToRead = stage3RemainingSentences.join(". ");
-        speakText(fullTextToRead);
+        speakText(fullTextToRead, () => {
+        speakText(`Type: ${stage3TargetWord}`);
+        inputEl.placeholder = `Type: ${stage3TargetWord}`;
+        });
     } else {
         // Stage 3 Complete -> Transition to Stage 4
         linesContainer.innerText = "Stage 3 Completed!";
@@ -167,8 +174,8 @@ function validateStage3Word() {
     const feedbackEl = document.getElementById("stage3-feedback");
 
     if (userInput.toLowerCase() === stage3TargetWord.toLowerCase()) {
-        feedbackEl.style.color = "#00f5d4";
-        feedbackEl.innerText = "Correct! Removing first line...";
+        feedbackEl.style.color = "#f3f3f3";
+        feedbackEl.innerText = "Correct.";
 
         // 5. If correct -> Remove top line and re-process remaining lines
         setTimeout(() => {
@@ -229,18 +236,28 @@ function addNewLineAndProcess() {
 
         // Reset UI inputs
         inputEl.value = "";
-        inputEl.placeholder = "Type the last sentence...";
+        inputEl.placeholder = "";
         feedbackEl.innerText = "";
         inputEl.focus();
 
         // Read all visible sentences built so far
         const textToRead = stage4VisibleSentences.join(". ");
-        speakText(textToRead);
+        speakText(textToRead, () => {
+        speakText("Type the last sentence."); 
+        inputEl.placeholder = "Type the last sentence...";
+        });
     } else {
-        // Stage 4 & Entire Test Complete
-        linesContainer.innerText = "Congratulations! You completed all 4 stages successfully!";
-        document.getElementById("stage4-input-area").style.display = "none";
-        speakText("Congratulations! You have successfully mastered all stages.");
+        //Hide Stage 4 box and show final achievement card container
+        const stage4Box = document.getElementById("term-display-box-stage4");
+        const finalBox = document.getElementById("stage-final-container"); // Change ID to match your card wrapper
+
+        if (stage4Box) stage4Box.style.display = "none";
+        if (finalBox) finalBox.style.display = "block";
+
+        // Speak final congratulation message
+        speakText("Congratulations! You have successfully mastered all stages.", () => {
+            // Optional: trigger html2canvas or card render logic here if needed
+        });
     }
 }
 
@@ -253,8 +270,8 @@ function validateStage4Sentence() {
     const targetSentence = stage4VisibleSentences[stage4VisibleSentences.length - 1];
 
     if (userInput.toLowerCase() === targetSentence.toLowerCase()) {
-        feedbackEl.style.color = "#00f5d4";
-        feedbackEl.innerText = "Correct! Adding next sentence...";
+        feedbackEl.style.color = "#f3f3f3";
+        feedbackEl.innerText = "Correct!";
 
         // Move to next line
         stage4CurrentIndex++;
@@ -278,7 +295,7 @@ function validateLongestWord() {
 
     if (userInput.toLowerCase() === targetLongestWord.toLowerCase()) {
         feedbackEl.style.color = "#f3f3f3";
-        feedbackEl.innerText = "Correct! Moving to next line...";
+        feedbackEl.innerText = "Correct!";
         
         setTimeout(() => {
             currentLineIndex++;
@@ -433,6 +450,45 @@ function stage4(){
     }
 }
 
+//Generate canvas and download card as PNG
+function downloadAchievementCard() {
+    const cardElement = document.getElementById("achievement-card");
+
+    if (!cardElement) {
+        console.error("Card element not found");
+        return;
+    }
+
+    // Check if library is loaded correctly
+    if (typeof html2canvas === "undefined") {
+        alert("Library is still loading or URL is incorrect!");
+        return;
+    }
+
+    html2canvas(cardElement, {
+        backgroundColor: "#14254c",
+        scale: 2
+    }).then((canvas) => {
+        const imageURI = canvas.toDataURL("image/png");
+        const link = document.createElement("a");
+        link.download = "Achievement_Certificate.png";
+        link.href = imageURI;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }).catch((err) => {
+        console.error("Error generating canvas:", err);
+    });
+}
+
+//Bind button click event
+function Achievement_card() {
+    const downloadBtn = document.getElementById("download-card-btn");
+    if (downloadBtn) {
+        downloadBtn.addEventListener("click", downloadAchievementCard);
+    }
+}
+
 // Main DOM event setup
 document.addEventListener("DOMContentLoaded", () => {
     load_data();
@@ -441,5 +497,5 @@ document.addEventListener("DOMContentLoaded", () => {
     stage2();
     stage3();
     stage4();
-    
+    Achievement_card();
 });
