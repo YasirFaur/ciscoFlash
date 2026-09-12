@@ -6,7 +6,9 @@
     <title>ciscoFlash - Index</title>
     <!-- Link external CSS stylesheet -->
     <link rel="stylesheet" href="../style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script></head>
+    <script src="../cardBg.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
 <body>
 
     <!-- Header section with site title -->
@@ -15,7 +17,31 @@
         <p class="tagline">Cisco Terms Simplified in a Flash.</p>
     </header>
 
-    <main>
+    <!-- Step 0: User Information Setup Card -->
+    <div id="user-setup-card" class="get-user-info">
+        <h2 style="color: #ffffff; margin-bottom: 15px;">Welcome to the Assessment</h2>
+        <p style="color: #ccc; font-size: 14px; margin-bottom: 20px;">Please enter your details to unlock the test and issue your Achievement Card.</p>
+        
+        <div style="margin-bottom: 15px; text-align: left;">
+            <label style="color: #fff; font-size: 12px; display: block; margin-bottom: 5px;">Full Name (For Achievement Card):</label>
+            <input 
+                type="text" 
+                id="user-fullname" 
+                placeholder="Full Name (e.g. Yasir Faur)" 
+                title="Please use Latin letters only"
+            />
+        </div>
+
+        <div style="margin-bottom: 20px; text-align: left;">
+            <label style="color: #fff; font-size: 12px; display: block; margin-bottom: 5px;">Email Address:</label>
+            <input type="email" id="user-email" placeholder="example@mail.com">
+        </div>
+
+        <button id="start-test-btn" >Start Assessment</button>
+    </div>
+
+    <!-- Main Test Area (Initially Hidden) -->
+    <main id="main-test-area" style="display: none;">
 
         <!-- Timer Display -->
         <div id="test-timer" 
@@ -34,6 +60,31 @@
             00:00:00
         </div>
 
+        <!-- White Glow Warning Banner (Centered) -->
+        <div id="Warning-banner" style=
+        "background: rgba(255, 255, 255, 0.05); 
+        width: 90%; margin: 15px auto; 
+        border-top: 1px solid rgba(255, 255, 255, 0.4); 
+        border-bottom: 1px solid rgba(255, 255, 255, 0.4); 
+        border-radius: 8px; 
+        padding: 10px 16px; 
+        color: #ffffff; 
+        font-size: 13px; 
+        text-align: center; 
+        box-shadow: 0 0 12px rgba(255, 255, 255, 0.15); 
+        text-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
+        display: block;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 4px;">
+            <!-- Triangle outline -->
+            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+            <!-- Exclamation mark lines -->
+            <line x1="12" y1="9" x2="12" y2="13"></line>
+            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+            <!-- SVG animation element for pulsing opacity -->
+            <animate attributeName="opacity" values="1;0.2;1" dur="1.2s" repeatCount="indefinite" />
+            </svg> Warning: This test is protected. Leaving this page or switching tabs will cancel the test and reload the page automatically.
+        </div>
+
         <!-- Stage 1 -->
         <div id="term-display-box" class="stage1">
             
@@ -42,11 +93,22 @@
 
             <h2 id="card-term-title" style="color: #ffffff;">--</h2>
             <p id="card-term-desc" class="term-overview">--</p>
+            <!-- A2-B1: Standard horizontal line divider -->
+            <hr class="stats-divider">
+
+            <!-- A2-B1: Statistics container with small title -->
+            <div class="stats-container">
+                <span class="stats-title">Statistics:</span>
+                <p id="statistics">[ Words: 1024 ]   [ Letters: 10000 ]   [ Read Time: 6.83 min ]</p>
+                <p id="advisory-note"></p>
+            </div>
+            
         </div>
 
         <!-- Stage 2 Container (Hidden by default) -->
         <div id="term-display-box-stage2" class="stage2" style="display: none;">       
-            <div class="div-stage2"> Stage 2: Focus </div>   
+            <div class="div-stage2"> Stage 2: Focus                 
+            </div>   
             <!-- Active Line Display -->
             <p id="stage2-line-text" class="term-overview" style="color: #ffffff; min-height: 48px; margin-bottom: 15px;"></p>
 
@@ -57,15 +119,18 @@
             </div>
             
             <!-- Feedback Message -->
-            <div id="stage2-feedback" style="margin-top: 10px; font-size: 14px; min-height: 20px;"></div>
+            <div id="stage2-feedback" style="margin-top: 10px; font-size: 14px; min-height: 20px;">                
+            </div>
         </div>
 
         <!-- Stage 3 Container (Hidden by default) -->
         <div id="term-display-box-stage3" class="stage3" style="display: none;">
-            <div class="div-stage3"> Stage 3: Mastery </div>
+            <div class="div-stage3"> Stage 3: Progressive Focus                 
+            </div>
             
             <!-- Display all remaining lines -->
-            <div id="stage3-lines-container" class="term-overview" style="color: #ffffff; min-height: 48px; margin-bottom: 15px; text-align: left;"></div>
+            <div id="stage3-lines-container" class="term-overview" style="color: #ffffff; min-height: 48px; margin-bottom: 15px; text-align: left;">                
+            </div>
 
             <!-- Word Test Input Form -->
             <div id="stage3-input-area" style="margin-top: 15px;">
@@ -74,15 +139,17 @@
             </div>
             
             <!-- Feedback Message -->
-            <div id="stage3-feedback" style="margin-top: 10px; font-size: 14px; min-height: 20px;"></div>
+            <div id="stage3-feedback" style="margin-top: 10px; font-size: 14px; min-height: 20px;">                
+            </div>
         </div>
 
         <!-- Stage 4 Container (Hidden by default) -->
         <div id="term-display-box-stage4" class="stage4" style="display: none;">
-            <div class="div-stage4"> Stage 4: Final Challenge </div>
+            <div class="div-stage4"> Stage 4: Cumulative Building </div>
             
             <!-- Active cumulative sentences display -->
-            <div id="stage4-lines-container" class="term-overview" style="color: #ffffff; min-height: 48px; margin-bottom: 15px; text-align: left;"></div>
+            <div id="stage4-lines-container" class="term-overview" style="color: #ffffff; min-height: 48px; margin-bottom: 15px; text-align: left;">                
+            </div>
 
             <!-- Sentence Test Input Form -->
             <div id="stage4-input-area" style="margin-top: 15px;">
@@ -91,32 +158,303 @@
             </div>            
     
             <!-- Feedback Message -->
-            <div id="stage4-feedback" style="margin-top: 10px; font-size: 14px; min-height: 20px;"></div>
+            <div id="stage4-feedback" style="margin-top: 10px; font-size: 14px; min-height: 20px;">                
+            </div>
         </div>
 
-        <!-- Final Achievement Card Container (Hidden by default) -->
-        <div id="stage-final-container" style="display: block; text-align: center; margin-top: 20px;">
+        <!-- Stage 5 - Multiple Choice Container -->
+        <div id="term-display-box-stage5" style="display: none;">
+            <!-- A2-B1: Target Term Display -->
+            <h3 id="stage5-term-title" class="stage-title">Term Name</h3>
+            <p class="stage-instruction">Select the correct definition or related sentence:</p>
+
+            <!-- A2-B1: Multiple Choice Options Container -->
+            <div id="stage5-choices-container" class="choices-wrapper">
+                <button id="choice_1" type="button" class="btn-link" data-index="0" onclick="checkStage5Answer(0)">
+                    <span class="choice-num">1.</span> <span class="choice-text" id="stage5-choice-0">Choice 1</span>
+                </button>
+                <button id="choice_2" type="button" class="btn-link" data-index="1" onclick="checkStage5Answer(1)">
+                    <span class="choice-num">2.</span> <span class="choice-text" id="stage5-choice-1">Choice 2</span>
+                </button>
+                <button id="choice_3" type="button" class="btn-link" data-index="2" onclick="checkStage5Answer(2)">
+                    <span class="choice-num">3.</span> <span class="choice-text" id="stage5-choice-2">Choice 3</span>
+                </button>
+                <button id="choice_4" type="button" class="btn-link" data-index="3" onclick="checkStage5Answer(3)">
+                    <span class="choice-num">4.</span> <span class="choice-text" id="stage5-choice-3">Choice 4</span>
+                </button>
+            </div>
+
+            <!-- A2-B1: Feedback Message Display -->
+            <div id="stage5-feedback" class="feedback-message"></div>
+        </div>
+
+        <!-- Stage 6 Display Box (Fill in the Blank) -->
+        <div id="term-display-box-stage6" class="stage-container" style="display: none;">
             
-            <!-- Card Content to be captured by html2canvas -->
-            <div id="achievement-card" style="background: #14254c; border: 2px solid #00f5d4; border-radius: 12px; padding: 25px; color: #ffffff; max-width: 500px; margin: 0 auto; box-shadow: 0 0 15px rgba(0,245,212,0.2);">
-                <h2 style="color: #00f5d4; margin-top: 0;">Certificate of Mastery</h2>
-                <p style="font-size: 16px; margin: 15px 0;">Congratulations! You have successfully completed all 4 stages of the test.</p>
-                <div style="font-size: 14px; color: #f6f6f3; margin-top: 20px; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 15px;">
-                    <span>Status: Verified Master</span>
+            <!-- Stage Header -->
+            <div class="stage-header">
+                <h3 id="stage6-term-title" class="term-title">Term Title</h3>
+                <p class="stage-instruction">Read the sentence and type the missing word in the blank:</p>
+            </div>
+
+            <!-- Sentence Display with Blank -->
+            <div id="stage6-sentence-container" class="sentence-box">
+                <p id="stage6-sentence-text" class="sentence-text">
+                    <!-- Dynamic sentence with blank line will be inserted here -->
+                </p>
+            </div>
+
+            <!-- Input Form -->
+            <div class="stage6-input-wrapper">
+                <input type="text" id="stage6-user-input" class="blank-input" onpaste="return false;" ondrop="return false;" placeholder="Type missing word here..." autocomplete="off">
+                <button type="button" id="stage6-submit-btn" class="btn-link" onclick="checkStage6Answer()">Check</button>
+            </div>
+
+            <!-- Feedback Message Area -->
+            <div id="stage6-feedback" class="feedback-message"></div>
+
+            <!-- Sentence Progress Indicator -->
+            <div class="stage6-progress">
+                <span id="stage6-progress-text">Sentence 1 of 1</span>
+            </div>
+
+        </div>
+       
+    </main>
+
+    <!-- Final Achievement Container -->
+    <div id="stage-final-container" style="display: none; text-align: center; margin-top: 25px;"> 
+        <div id="achievement-card" style="
+            width: 360px;
+            height: 360px;
+            margin: 0 auto;
+            border-radius: 50%;
+            background-color: #0a0f1e;
+            background-image: url('../images/timetovalue.png');
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            border: 1px dashed #ffd700;
+            box-shadow: 0 0 25px rgba(255, 215, 0, 0.15);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+            padding: 25px;
+            box-sizing: border-box;
+            position: relative;
+        ">
+        
+            <!-- SVG Ring Text Layer -->
+            <svg viewBox="0 0 360 360" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;">
+            <defs>
+                <!-- Add circular path -->
+                <path id="full-coin-ring" d="M 180,180 m -168,0 a 168,168 0 1,1 336,0 a 168,168 0 1,1 -336,0" />
+                <circle cx="180" cy="180" r="155" fill="none" stroke="#ffd700" stroke-width="0.8" stroke-dasharray="3,3" opacity="0.6"/>
+
+                <!-- Black glow and shadow filter for SVG text -->
+                <filter id="black-text-glow" x="-20%" y="-20%" width="140%" height="140%">
+                    <!-- Create black blur background -->
+                    <feDropShadow dx="0" dy="0" stdDeviation="1.5" flood-color="#000000" flood-opacity="1"/>
+                    <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#000000" flood-opacity="0.9"/>
+                </filter>
+            </defs>
+
+            <circle cx="180" cy="180" r="161" fill="none" stroke="#ffd700" stroke-width="0.8" opacity="0.4"/>
+
+            <!-- Curved text with stroke and filter for strong black shadow -->
+            <text fill="#ffd700" 
+                font-size="9" 
+                font-weight="bold" 
+                letter-spacing="3.1px" 
+                opacity="0.95"
+                filter="url(#black-text-glow)"
+                stroke="#000000"
+                stroke-width="0.6px"
+                paint-order="stroke fill">
+                <textPath href="#full-coin-ring" startOffset="0%">
+                    ¥ ciscoFlash CREATED BY YASIR FAUR 2026 € INVEST TIME. BUILD SKILLS. CREATE VALUE ¥ VALUE ≈ ( TIME ) × ( LEARNING^2) × ( PRACTICE^3 )
+                </textPath>
+            </text>
+        </svg>
+
+            <!-- Subtitle Badge -->
+            <span style="
+                font-size: 24px;            
+                color: #ffe600; 
+                font-weight: bold; 
+                letter-spacing: 4px;
+                text-shadow: 
+                    0 0 4px #000000, 
+                    0 0 8px #000000, 
+                    0 0 14px #000000, 
+                    0 0 20px #000000;
+            ">ciscoFlash</span>
+
+            <!-- data&time -->
+            <div id="card-date-time" style="
+                font-size: 16px;
+                color: #ffd700;
+                opacity: 0.85;
+                letter-spacing: 1.5px;
+                margin-top: 4px;
+                margin-bottom: 2px;
+                font-family: sans-serif;
+                text-shadow: 
+                    0 0 4px #000000, 
+                    0 0 8px #000000, 
+                    0 0 14px #000000, 
+                    0 0 20px #000000;
+            "></div>
+
+            <!-- User Name with visible black glow background -->
+            <h3 id="card-user-name" style="
+                font-size: 24px; 
+                margin-bottom: 4px; 
+                font-weight: bold; 
+                color: #fff4b8;
+                letter-spacing: 3px;
+                text-shadow: 
+                    0 0 4px #000000, 
+                    0 0 8px #000000, 
+                    0 0 14px #000000, 
+                    0 0 20px #000000;
+            ">user name</h3>
+
+            <!-- Card Title -->
+            <h2 style="
+                font-size: 16px; 
+                margin-top: 1px;
+                margin-bottom: 12px; 
+                font-weight: 800; 
+                color: #ffd700;
+                letter-spacing: 2px;
+                text-shadow: 
+                    0 0 4px #000000, 
+                    0 0 8px #000000, 
+                    0 0 14px #000000, 
+                    0 0 20px #000000;
+            ">has successfully completed</h2>
+        
+            <!-- term name -->
+            <span id="card-title" style="
+                font-size: 24px;            
+                color: #ffe600; 
+                font-weight: bold; 
+                letter-spacing: 4px;
+                margin: 3px;
+                text-shadow: 
+                    0 0 4px #000000, 
+                    0 0 8px #000000, 
+                    0 0 14px #000000, 
+                    0 0 20px #000000;
+            ">term name</span> 
+
+            <h2 style="
+                font-size: 16px; 
+                margin: 3px 0 3px 0; 
+                font-weight: 800; 
+                color: #ffd700;
+                letter-spacing: 2px;
+                text-shadow: 
+                    0 0 4px #000000, 
+                    0 0 8px #000000, 
+                    0 0 14px #000000, 
+                    0 0 20px #000000;
+            ">Achievement Card</h2>
+
+            <!-- Center Metrics Box -->
+            <div style="
+                display: flex; 
+                gap: 15px; 
+                background: #14254c; 
+                opacity: 0.8;
+                padding: 8px 18px; 
+                border-radius: 10px; 
+                border-top: 1px dashed #ffd700;
+                border-bottom: 1px dashed #ffd700;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+                z-index: 2;
+            ">
+                <div>
+                    <p style="font-size: 9px; color: #ffd700; opacity: 0.85; margin: 0; text-transform: uppercase;">GRADE</p>
+                    <div id="card-total-score" style="font-size: 17px; font-weight: bold; color: #ffd700;">0%</div>
+                </div>
+                <div style="width: 1px; background: rgba(255, 215, 0, 0.4);"></div>
+                <div>
+                    <p style="font-size: 9px; color: #ffd700; opacity: 0.85; margin: 0; text-transform: uppercase;">Invested Time</p>
+                    <div id="card-total-time" style="font-size: 17px; font-weight: bold; color: #ffd700;">00:00:00</div>
                 </div>
             </div>
 
-            <!-- Action Buttons -->
-            <div style="margin-top: 20px;">
-                <button id="download-card-btn" class="btn-link" style="padding: 10px 20px; font-size: 15px;">Download Certificate</button>
-            </div>
+            <!-- id -->
+            <p id="card-id-text" style="
+                font-size: 12px; 
+                color: #ffd700; 
+                margin: 6px; 
+                opacity: 0.8;
+                text-shadow: 
+                    0 0 4px #000000, 
+                    0 0 8px #000000, 
+                    0 0 14px #000000, 
+                    0 0 20px #000000;
+            ">ID:0902192400000000</p>
 
         </div>
 
-    </main>
+        <!-- Download Trigger Button -->
+        <div style="margin-top: 25px;">
+            <p>⚠️ Download your achievement card now — it won't be saved after leaving this page!</p>
+            <button id="download-card-btn"
+                    onclick="copyFbPostText(); downloadAchievementCard()"
+                    class="btn-link"
+                    style="padding: 10px 24px; font-size: 15px; border-radius: 25px; cursor: pointer;">
+                Download Achievement Card & Copy Post for sharing 📋
+            </button>
+        </div>
+
+        <!-- Facebook Post Container id="term-display-box" class="stage1" -->
+        <div id="fb_post" style="display: block;" class="stage1">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                <span style="font-weight: bold; color: #1877f2;">📱 Ready to share Facebook post </span>
+                <!-- Copy Button -->
+                <button id="copy-fb-btn" onclick="copyFbPostText()">
+                   Copy The Post 📋
+                </button>
+
+                <button id="re-generate-post" onclick="regenerate_post()">
+                    Re-generate 🔄
+                </button>
+            </div>
+            <!-- Post Text Area -->
+           <div id="fb_post_text" 
+           style="
+            white-space: pre-line; 
+            background: rgba(255, 255, 255, 0.05); 
+            width: 100%; 
+            box-sizing: border-box; 
+            border-top: 1px solid rgba(255, 255, 255, 0.4); 
+            border-bottom: 1px solid rgba(255, 255, 255, 0.4); 
+            border-radius: 8px; 
+            padding: 12px 16px; 
+            color: #ffffff; 
+            font-size: 13px; 
+            text-align: left; 
+            box-shadow: 0 0 6px rgba(255, 255, 255, 0.15); 
+            text-shadow: 0 0 4px rgba(255, 255, 255, 0.5); 
+            display: block;
+            margin-top: 10px;">
+                
+            </div>
+        </div>
+    </div>
+
+    
 
     <!-- Footer section with social links -->
-    <footer>
+    <footer>       
+
        <!-- Social links as text buttons inside footer -->
         <div>
             <a href="https://www.facebook.com/PioneeersTech/" class="btn-link" target="_blank" rel="noopener noreferrer">FaceBook</a>
@@ -124,6 +462,7 @@
             <a href="https://www.youtube.com/c/YasirFaur" class="btn-link" target="_blank" rel="noopener noreferrer">YouTube</a>
             <a href="https://wa.me/905342694115" class="btn-link" target="_blank" rel="noopener noreferrer">WhatsApp</a>        
         </div>
+
     </footer>
 
     <!-- Copyright notice outside footer -->

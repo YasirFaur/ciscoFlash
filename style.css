@@ -103,7 +103,7 @@ footer {
     border-right: 1px solid #f6f6f3;
     border-radius: 6px;
     padding: 6px 12px;
-    margin: 1px;
+    margin: 5px;
     transition: background-color 0.3s, color 0.3s;
 }
 
@@ -167,7 +167,10 @@ header h1 {
 #search-input::placeholder,
 #longest-word-input::placeholder,
 #stage3-word-input::placeholder,
-#stage4-sentence-input::placeholder {
+#stage4-sentence-input::placeholder,
+#user-fullname::placeholder,
+#user-email::placeholder,
+#stage6-user-input::placeholder {
     color: #f6f6f3;
     opacity: 1;
 }
@@ -175,7 +178,10 @@ header h1 {
 #search-input,
 #longest-word-input,
 #stage3-word-input,
-#stage4-sentence-input {
+#stage4-sentence-input,
+#user-fullname,
+#user-email,
+#stage6-user-input {
     background-color: #14254c;
     color: #f6f6f3;
     width: 100%;          
@@ -264,11 +270,13 @@ main {
 }
 
 /* Center term display box */
-#term-display-box {
-    width: 90%;
+#term-display-box,
+#fb_post {
+    width: 80%;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     border-top: 1px solid #f6f6f3;
     border-bottom: 1px solid #f6f6f3;
     border-radius: 10px;
@@ -443,7 +451,16 @@ pre::-webkit-scrollbar-thumb:hover {
 /*Reset button borders and set side borders only */
 #check-word-btn,
 #stage3-check-btn,
-#stage4-check-btn {
+#stage4-check-btn,
+#start-test-btn,
+#choice_1,
+#choice_2,
+#choice_3,
+#choice_4,
+#stage6-submit-btn,
+#download-card-btn,
+#copy-fb-btn,
+#re-generate-post {
     background: transparent;
     color: #f6f6f3;
     font-size: 14px;
@@ -459,7 +476,16 @@ pre::-webkit-scrollbar-thumb:hover {
 
 #check-word-btn:hover,
 #stage3-check-btn:hover,
-#stage4-check-btn:hover {
+#stage4-check-btn:hover,
+#start-test-btn:hover,
+#choice_1:hover,
+#choice_2:hover,
+#choice_3:hover,
+#choice_4:hover,
+#stage6-submit-btn:hover,
+#download-card-btn:hover,
+#copy-fb-btn:hover,
+#re-generate-post:hover {
     background-color: #f6f6f3;
     color: #14254c;
 }
@@ -479,3 +505,92 @@ input, textarea {
     -ms-user-select: text;
     user-select: text;
 }
+
+.get-user-info {
+    width: 90%; 
+    max-width: 500px; 
+    margin: 30px auto; 
+    padding: 25px; 
+    background: rgba(255, 255, 255, 0.05); 
+    border-left: 1px solid #ffffff; 
+    border-right: 1px solid #ffffff; 
+    border-radius: 12px; 
+    text-align: center; 
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+/* Stack stage 5 choices vertically on separate lines */
+#stage5-choices-container,
+.choices-wrapper {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    width: 100% !important;
+}
+
+/* Force btn-link buttons to take full width on a single line */
+#stage5-choices-container .btn-link,
+.choices-wrapper .btn-link {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    text-align: left;
+    margin-bottom: 0;
+}
+/* A2-B1: Subtle horizontal divider */
+.stats-divider {
+    border: 0;
+    height: 1px;
+    background: #e0e0e0;
+    margin: 20px 0 10px 0;
+}
+
+/* A2-B1: Muted secondary text for statistics */
+.stats-container {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.stats-title {
+    font-weight: bold;
+    color: #444;
+}
+
+/* A2-B1: Container style using Flexbox */
+#statistics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 15px;
+    align-items: left;
+    justify-content: left;
+    padding: 10px;
+    font-family: monospace, sans-serif;
+}
+
+/* A2-B1: Individual item style - prevents wrapping inside the item */
+.stat-item {
+    white-space: nowrap; /* A2-B1: Prevent text inside item from wrapping */
+    background-color: #14254c;
+    border-left: 1px solid #dcdfe6;
+    border-right: 1px solid #dcdfe6;
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-size: 0.85rem;
+    color: #ffffff;
+}
+
+/* A2-B1: Media query for small screen devices */
+@media (max-width: 600px) {
+    #statistics {
+        flex-direction: column; /* A2-B1: Stack items vertically on mobile */
+        align-items: stretch;
+        text-align: center;
+    }
+
+    .stat-item {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
