@@ -7,7 +7,8 @@
     <title>ciscoFlash - Index</title>
     <!-- Link external CSS stylesheet -->
     <link rel="stylesheet" href="style.css">
-
+    <!-- A2-B1: Prevent favicon 404 error -->
+    <link rel="shortcut icon" href="#">
 </head>
 <body>
 
@@ -29,7 +30,7 @@
         <h2>Index <span id="term-count"></span></h2>
 
         <!-- Search input field -->
-        <form>
+        <form onsubmit="event.preventDefault();">
             <input type="text" id="search-input" placeholder="/ Search for a term ... [Ctrl + K]">
         </form>
 
@@ -89,7 +90,7 @@
                 <span class="term-desc">Dial-up</span>
             </li>
             <li>
-                <a href="terms/2g.html">2G</a>
+                <a href="./terms/2g.html">2G</a>
                 <span class="term-desc">Second-Generation Cellular Network Technology</span>
             </li>
             <li>

@@ -11,10 +11,12 @@
 </head>
 <body>
 
-    <!-- Header section with site title -->
+    <!-- A2-B1: Use JS navigation to ensure flag is set before blur -->
     <header>
-        <h1>ciscoFlash</h1>
-        <p class="tagline">Cisco Terms Simplified in a Flash.</p>
+        <a href="javascript:void(0);" class="header-link" onclick="navigateHome(event)">
+            <h1>ciscoFlash</h1>
+            <p class="tagline">Cisco Terms Simplified in a Flash.</p>
+        </a>
     </header>
 
     <!-- Step 0: User Information Setup Card -->
