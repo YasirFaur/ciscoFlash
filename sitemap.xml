@@ -82,5 +82,19 @@
   <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/ospf.html</loc><priority>0.8</priority></url>
   <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/eigrp.html</loc><priority>0.8</priority></url>
   <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/dijkstra.html</loc><priority>0.8</priority></url>
+  <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/devops.html</loc><priority>0.8</priority></url>
+  <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/ise.html</loc><priority>0.8</priority></url>
+  <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/sgt.html</loc><priority>0.8</priority></url>
+  <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/sgacl.html</loc><priority>0.8</priority></url>
+  <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/trustsec.html</loc><priority>0.8</priority></url>
+  <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/x509.html</loc><priority>0.8</priority></url>
+  <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/dacl.html</loc><priority>0.8</priority></url>
+  <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/nad.html</loc><priority>0.8</priority></url>
+  <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/pac.html</loc><priority>0.8</priority></url>
+  <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/tls.html</loc><priority>0.8</priority></url>
+  <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/eap.html</loc><priority>0.8</priority></url>
+  <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/_802_1x.html</loc><priority>0.8</priority></url>
+  <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/eapol.html</loc><priority>0.8</priority></url>
+  <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/peap.html</loc><priority>0.8</priority></url>
 
 </urlset>
