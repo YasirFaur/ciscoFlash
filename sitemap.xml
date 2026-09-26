@@ -95,6 +95,12 @@
   <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/eap.html</loc><priority>0.8</priority></url>
   <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/_802_1x.html</loc><priority>0.8</priority></url>
   <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/eapol.html</loc><priority>0.8</priority></url>
-  <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/peap.html</loc><priority>0.8</priority></url>
-
+  <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/peap.html</loc><priority>0.8</priority></url>  
+  <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/sip.html</loc><priority>0.8</priority></url>
+  <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/dtls.html</loc><priority>0.8</priority></url>
+  <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/ike.html</loc><priority>0.8</priority></url>
+  <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/nat_t.html</loc><priority>0.8</priority></url>
+  <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/ah.html</loc><priority>0.8</priority></url>
+  <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/esp.html</loc><priority>0.8</priority></url>
+  <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/cia.html</loc><priority>0.8</priority></url>
 </urlset>
