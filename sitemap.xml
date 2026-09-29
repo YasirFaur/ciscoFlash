@@ -103,4 +103,20 @@
   <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/ah.html</loc><priority>0.8</priority></url>
   <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/esp.html</loc><priority>0.8</priority></url>
   <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/cia.html</loc><priority>0.8</priority></url>
+  <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/vpn.html</loc><priority>0.8</priority></url>
+  <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/ssl.html</loc><priority>0.8</priority></url>
+  <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/ngfw.html</loc><priority>0.8</priority></url>
+  <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/ldap.html</loc><priority>0.8</priority></url>
+  <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/snort.html</loc><priority>0.8</priority></url>
+  <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/rtsp.html</loc><priority>0.8</priority></url>
+  <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/alg.html</loc><priority>0.8</priority></url>
+  <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/ips.html</loc><priority>0.8</priority></url>
+  <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/eap_fast.html</loc><priority>0.8</priority></url>
+  <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/ace.html</loc><priority>0.8</priority></url>
+  <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/acl.html</loc><priority>0.8</priority></url>
+  <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/nac.html</loc><priority>0.8</priority></url>
+  <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/gbp.html</loc><priority>0.8</priority></url>
+  <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/aaa.html</loc><priority>0.8</priority></url>
+  <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/rbac.html</loc><priority>0.8</priority></url>
+  <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/tacacs_plus.html</loc><priority>0.8</priority></url>
 </urlset>
