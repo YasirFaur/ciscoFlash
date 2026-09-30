@@ -119,4 +119,22 @@
   <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/aaa.html</loc><priority>0.8</priority></url>
   <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/rbac.html</loc><priority>0.8</priority></url>
   <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/tacacs_plus.html</loc><priority>0.8</priority></url>
+  <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/exec.html</loc><priority>0.8</priority></url>
+  <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/api.html</loc><priority>0.8</priority></url>
+  <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/snmp.html</loc><priority>0.8</priority></url>
+  <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/mib.html</loc><priority>0.8</priority></url>
+  <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/oid.html</loc><priority>0.8</priority></url>
+  <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/snmpv3.html</loc><priority>0.8</priority></url>
+  <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/gui.html</loc><priority>0.8</priority></url>
+  <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/snmpv2c.html</loc><priority>0.8</priority></url>
+  <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/ccc.html</loc><priority>0.8</priority></url>
+  <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/vmanage.html</loc><priority>0.8</priority></url>
+  <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/sd_wan.html</loc><priority>0.8</priority></url>
+  <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/lte.html</loc><priority>0.8</priority></url>
+  <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/vbond.html</loc><priority>0.8</priority></url>
+  <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/vsmart.html</loc><priority>0.8</priority></url>
+  <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/meraki.html</loc><priority>0.8</priority></url>
+  <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/intersight.html</loc><priority>0.8</priority></url>
+  <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/northbound.html</loc><priority>0.8</priority></url>
+  <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/rest.html</loc><priority>0.8</priority></url>
 </urlset>
