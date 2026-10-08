@@ -594,3 +594,8 @@ input, textarea {
     }
 }
 
+.term-link {
+    font-weight: bold;     
+    text-decoration: underline;    
+}
+
