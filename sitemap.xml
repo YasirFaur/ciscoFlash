@@ -156,7 +156,19 @@
   <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/netconf.html</loc><priority>0.8</priority></url>
   <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/southbound.html</loc><priority>0.8</priority></url>
   <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/xml.html</loc><priority>0.8</priority></url>
-  
+  <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/switch.html</loc><priority>0.8</priority></url>
+  <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/router.html</loc><priority>0.8</priority></url>
+  <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/radius.html</loc><priority>0.8</priority></url>
+  <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/hd.html</loc><priority>0.8</priority></url>
+  <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/cml.html</loc><priority>0.8</priority></url>
+  <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/iperf.html</loc><priority>0.8</priority></url>
+  <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/jitter.html</loc><priority>0.8</priority></url>
+  <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/pcap.html</loc><priority>0.8</priority></url>
+  <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/wireshark.html0.8</loc><priority>0.8</priority></url>
+  <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/pmf.html0.8</loc><priority>0.8</priority></url>
+  <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/roaming.html0.8</loc><priority>0.8</priority></url>
+  <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/voip.html0.8</loc><priority>0.8</priority></url>
+  <url><loc>https://yasirfaur.github.io/ciscoFlash/terms/rtp.html0.8</loc><priority>0.8</priority></url>
 
 
 </urlset>
